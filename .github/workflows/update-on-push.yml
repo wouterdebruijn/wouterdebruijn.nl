@@ -1,0 +1,20 @@
+name: Website deployment
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  production-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: SSH Connection      
+      uses: appleboy/ssh-action@master
+      with: 
+        key: ${{secrets.SSH_KEY}}
+        host: wouterdebruijn.nl
+        port: 23
+        username: autogit
+        script: |
+          cd /var/www/wouterdebruijn.nl/
+          git pull origin master
