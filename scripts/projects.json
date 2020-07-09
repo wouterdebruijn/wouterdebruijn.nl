@@ -54,6 +54,13 @@ projects = [
 "author":"Wouter",
 "innerHTML":"Welcome back! It's been been quite some time since I posted a new project update, Time flies! I have a couple of things to share. First of, I'm (almost) done with my current college degree. I finished everything in time with good grades, so I am not expecting anything special. The school is still deciding if there will be a ceremony (because of Covid-19). But I'm basicly done! My current plan for next year following a new degree at The Hague University of Applied sciences (Delft campus). But now, the title of this article. First of; I opened a new repository on Github so I can store my homebuild scripts which I use to make some administration tasks easier. There is not much in there now, but I did at my new Wireguard client creation script. More will follow. Also I made a new version of my button panel project, this time with a custom PCB! I am realy happy with the outcome of the electronics. It works really well and is way more reliable then the older version which is quite fragile inside. I might revisit the case design. The back panel warped quite a lot, so the backpanel does not fit as nice as I had hoped for. I might reprint it in a better orientation.",
 "images": 3
-}
+},
+{
+    "name":"Finished my MBO education & Website Repo",
+    "date":"2020-07-09",
+    "author":"Wouter",
+    "innerHTML":"Yeeeh! I finished my education at Nova College in Haarlem. I already talked about this in the \"Script repo & New button panel\" post. But I wanted to give this small update. I also made a change to this website. Normally I just change the content on the server and don't think about it anymore. But I wanted to have a git repo for this website to I can go back in changes. This will be nice when I migrate to Vue.JS. But I also added a Git action that automatically pulls the latest master branch to my server. This makes it easy to put new content on here. I am also working on numerous projects. Some of these are private, so there won't be an article about those. But I also started to help a friend with an awesome new project. He wants to create a website like Trello and build it from scratch. I might have had some influence in choosing the stack, because he is using a Typescript backend and a Vue.JS frontend. :)",
+    "images": 3
+    }
 ]
 
