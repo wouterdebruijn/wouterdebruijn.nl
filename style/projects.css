@@ -1,0 +1,29 @@
+.flexbox {
+  display: flex;
+}
+
+.projectImg {
+  width: 40ex;
+  padding: .5ex 2ex;
+}
+
+.projectImgBox {
+  text-align: right;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-space-between;
+}
+
+@media only screen and (max-width: 700px) {
+  .flexbox {
+    flex-direction: column;
+  }
+  .projectImg {
+    width: 100%;
+    padding: 2ex 2ex 1ex 2ex;
+    margin: auto;
+  }
+}

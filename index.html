@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="description" content="Wouter de Bruijn Hobby Website">
+  <meta name="keywords" content="Wouter,ICT,Hobby,Tech,de,Bruijn">
+  <meta name="author" content="Wouter de Bruijn">
+  <meta charset="utf-8">
+  <title>Wouter de Bruijn Hobby Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!--Code from an epic tool: realfavicongenerator.net -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aea8">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#00aea8">
+
+  <link rel="stylesheet" type="text/css" href="style/projects.css">
+  <link rel="stylesheet alternate" type="text/css" href="style/bootstrap/darky.css" id="darky">
+  <link rel="stylesheet alternate" type="text/css" href="style/bootstrap/flaty.css" id="flaty">
+
+  <link rel="stylesheet" type="text/css" href="style/bootstrap/addons.css">
+
+  <!--Javascript Load-->
+  <script src="scripts/projects.json"></script>
+  <script src="scripts/projects.js"></script>
+
+
+  <script src="./scripts/jquery-3.4.1.js"></script>
+  <script src="./scripts/bootstrap.js"></script>
+
+  <script src="scripts/cssTheme.js"></script>
+
+  <!--Google-->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133684390-2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133684390-2');
+</script> -->
+
+
+</head>
+<body onload="loadProjects()">
+  <script src="scripts/scroll.js"></script>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Hobby Website</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" onclick='scrollToItem("aboutme")'>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick='scrollToItem("projects")'>Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick='scrollToItem("rights")'>Rights</a>
+          </li>
+        </ul>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="themeSwitch" checked="">
+          <label id="darkLightSwitchText" class="custom-control-label" for="themeSwitch">Dark/Light mode</label>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron bannerPicture">
+      <div class="bannerShade">
+        <h1 class="display-3">Wouter de Bruijn</h1>
+        <p class="lead">A personal hobby website with information about me and projects I do.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container bottom-line" id="aboutme">
+      <br><h1>About me</h1>
+      <p>
+        I am Wouter de Bruijn a 18 year old teenager who is interested in all kinds of technology. I experiment with Linux servers, web development, 3D printing and other various bits of technology.
+        I live in The Netherlands, my passion for tech started in high school where I experimented with electronics. My school did not have a IT class, but I make projects at home and talked about it with my friends. After highschool I entered college where I am now learning to be a Network and system administrator. I am still learning a lot at home with my own projects. On this website you will be able to find some of the projects I do, and general information about myself.
+      </p>
+      <h2>Education</h2>
+      <ul>
+        <li>Primary School - <a target="blank" href="https://web.archive.org/web/20090514040114/http://www.samenspel.com/index.php">Samenspel</a> <small>2005-2013<span title="I am not sure about the dates, but somewhere in this time period.">*</span></small></li>
+        <li>High school - <a target="blank" href="https://kajmunk.nl/">Kajmunk College</a> <small>2013-2017</small>
+          <ul>
+            <li>Dutch</li>
+            <li>English</li>
+            <li>Physics</li>
+            <li>Chemistry</li>
+            <li>Economy</li>
+            <li>Visual Arts</li>
+            <li>Mathematics</li>
+          </ul>
+        </li>
+        <li>College - <a target="blank" href="https://www.novacollege.nl/">Nova College Zijlweg</a> <small>2017-current</small>
+          <ul>
+            <li>Linux</li>
+            <li>Windows Server</li>
+            <li>Cisco</li>
+            <li>Management</li>
+            <li>Security</li>
+          </ul>
+        </li>
+        <li>Worked at - <a target="blank" href="https://studentaanhuis.nl/">Student aan Huis</a> <small>2017-2019</small></li>
+	<li>Working at - <a target="blank" href="https://goo.gl/maps/fv6gMp2uW1utYEjP9">Hanex Service</a> <small>2019-n/a</small></li>
+      </ul>
+    </div>
+    <div class="container" id="projects">
+      <h1>Projects</h1>
+      <span id="projectsExport"></span>
+    </div>
+    <div class="container" id="rights">
+      <h1>Rights</h1>
+      <p>Website made by myself. You can use the information on my side if you link back to it. You are not allowed to copy the entire site.</p><p>You can contact me at: <a href="MAILTO:webmaster@wouterdebruijn.nl?Subject=Contact Field Website: Subject">webmaster@wouterdebruijn.nl</a></p><br>
+    </div>
+  </body>
+  <footer>
+    <br><br><br><br><br><br>
+  </footer>
+  </html>

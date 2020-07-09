@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta name="description" content="Wouter de Bruijn Hobby Website">
+  <meta name="keywords" content="Wouter,ICT,Hobby,Tech,de,Bruijn">
+  <meta name="author" content="Wouter de Bruijn">
+  <meta charset="utf-8">
+  <title>Wouter de Bruijn Hobby Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="style/projects.css">
+  <link rel="stylesheet alternate" type="text/css" href="style/bootstrap/darky.css" id="darky">
+  <link rel="stylesheet alternate" type="text/css" href="style/bootstrap/flaty.css" id="flaty">
+
+  <link rel="stylesheet" type="text/css" href="style/bootstrap/addons.css">
+
+  <!--Javascript Load-->
+  <script src="scripts/projects.json"></script>
+  <script src="scripts/projects.js"></script>
+
+
+  <script src="./scripts/jquery-3.4.1.js"></script>
+  <script src="./scripts/bootstrap.js"></script>
+
+  <script src="scripts/cssTheme.js"></script>
+
+  <!--Google-->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133684390-2"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133684390-2');
+</script> -->
+
+
+</head>
+<body>
+  <script src="scripts/scroll.js"></script>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Sjors is Jarig!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" onclick='scrollToItem("aboutme")'>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick='scrollToItem("projects")'>Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" onclick='scrollToItem("rights")'>Rights</a>
+          </li>
+        </ul>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" class="custom-control-input" id="themeSwitch" checked="">
+          <label id="darkLightSwitchText" class="custom-control-label" for="themeSwitch">Dark/Light mode</label>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron bannerPicture">
+      <div class="bannerShade">
+        <h1 class="display-3">Sjors van Holst</h1>
+        <p class="lead">Epic dude who makes cool stuff!</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="container bottom-line" id="aboutme">
+      <br><h1>Sjors</h1>
+      <p>
+      Sjors is a great friend of mine and today is his birthday!<br>
+      Happy birthday mydude!! :) <small>Posted: 2020-03-22</small><br>
+	<img src="IMG_1208.JPG" style="max-width: 50vw; margin: 2ex 0;"></img>
+      </p>
+    </div>
+  </body>
+  <footer>
+    <br><br><br><br><br><br>
+  </footer>
+  </html>

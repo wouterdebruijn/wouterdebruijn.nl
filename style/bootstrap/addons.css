@@ -1,0 +1,21 @@
+.nav-link {
+  cursor: pointer;
+}
+
+.bannerPicture {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)), url("../../photo/background.png");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 0;
+}
+
+.bannerShade {
+  color: white;
+}
+
+#darkLightSwitchText {
+  color: white;
+}

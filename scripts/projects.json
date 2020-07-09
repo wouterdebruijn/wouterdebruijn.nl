@@ -1,0 +1,59 @@
+projects = [
+{
+"name":"Button Panel",
+"date":"2019-02-01",
+"author":"Wouter",
+"innerHTML":"I have a Logitech G29 Stearing wheel. Its a good wheel with quite a lot of features. But it does not have a nice button layout for the games I play. I mostly play simulators with the wheel. And I found that I don't not have enough buttons in the right places. So I wanted to make more. I looked into using my keyboard, but I did not want to lable the keys and I don't really have the space for it to be besides by stearing wheel. I needed something else! A small box with enough buttons on it to fulfill my needs. I made a 3D model and printed it out with my Anet A8 3D printer, bought some cheap buttons from china and wrote some <a target=\"blank\" href=\"https://github.com/ElectroGamez/general/blob/master/joypanel.ino\">code</a> for my Arduino pro micro. After assembling the whole project it worked great, and I made some upgrades to it over time.",
+"images": 1
+},
+{
+"name":"H-Shifter",
+"date":"2019-02-01",
+"author":"Wouter",
+"innerHTML":"As told above, I play simulation games, one of those games is <a target=\"blank\" href=\"https://eurotrucksimulator2.com/\">Euro Truck Simulator 2</a> in the past I played this with a Logitech F310 and other various gamepads. But when I bought my <a href=\"https://tweakers.net/pricewatch/455112/logitech-g29-driving-force/specificaties/\">Logitech G29</a> I needed something to simulate the eaton fuller shifter, that has two buttons on the side that change low/high range and low/high gear. I started searching on internet and found a company that makes exactly this, but there were some problems. 1. It was quite expensive. 2. They did not ship to The Netherlands. So I started to make my own. First I made a small not to ergonomic shifter that had room for two switches. (IMG1) It worked fine for quite a while, but when I made by Button Panel, I wanted an upgrade. A larger more ergonomic version that I can put beside my chair. (IMG2)<br>You can find the STL files <a href=\"https://github.com/ElectroGamez/general/blob/master/eaton%20Fuller%20Top.stl\" target=\"blank\">here</a> and <a href=\"https://github.com/ElectroGamez/general/blob/master/eaton%20Fuller%20bottom.stl\" target=\"blank\">here</a>. The shifter in connected to my button panel by a simple connector.",
+"images": 2
+},
+{
+"name":"SControl",
+"date":"2019-03-26",
+"author":"Wouter",
+"innerHTML":"<a href='https://wouterdebruijn.nl/sjors.html' target='blank'>A friend</a> of mine has some Philips Hue lights. You can control these lights from their API. I do not have those lights, but I do have a spare arduino and some relays. So I started a new project. <a href=\"https://github.com/ElectroGamez/SControl\">SControl</a> A nodejs web api that interfaces with my arduino to control my lights. This is the first time I made a API so it's not clean yet. But I will keep working on it and make it better. The API can be used by a lot of things for now I can control it with a local website and a Discord bot.",
+"images": 0
+},
+{
+"name":"This Site",
+"date":"2019-08-02",
+"author":"Wouter",
+"innerHTML":"I know this site needs an update. I am not working on this yet but I have made some plans and goals for my new site. Programming is not my main skill, but I would like to improve this site so it's looks good and has features that I like.",
+"images": 0
+},
+{
+"name":"Small site update",
+"date":"2002-01-30",
+"author":"Wouter",
+"innerHTML":"You might have noticed that this site got an update about a month ago. I did not make an article at the time however, I have made some changes to the site. We now have darkmode! (and lightmode for some people who would like it. But it does not have everything I want yet. At the moment, these articles are stored in a JSON file, which works fine, but it's not ideal. I would like to be able to store my articles in markdown, and parse that to html. That way all aricles can be in their own file, and I would be able to choose where the images are, give them a label, and use hyperlinks better. Also, the script that generates these articles from JSON is quite old, and I would be able to make it better now. I would probaly go for something that's generated ones on my server site, instead of building every time the client connects.",
+"images": 0
+},
+{
+"name":"Vue website & Bright Project",
+"date":"2020-03-26",
+"author":"Wouter",
+"innerHTML":"It has been a little while since I made a post on this website. But this does not mean I have not been doing projects like usual, I just didn't post any ;). It has almost been a year since the last commit on Scontrol, my Smartish home system. It is still working and I have made some changes to the version I run at home to control my lights. But the code is old and I wasn't that great at javascript programming back then. I am planning on making a new version, with a new name. Bright, this will be version 2 of my smarthome system and hopefully this one will be a bit smarten then its predecessor. I am planning on making it so that when I want to add new features later, it does not need a complete rewrite. Johnny Five, the package I use to communicate with the Arduino has a feature to wirelessly connect to a board over Wifi or Bluetooth. I tested this and it seems to work great. Which is nice because I need to relocate some of the relays I am using to turn lights on and off.<br>Then Vue, I have mode some significant progress learning and when I wanted to make a website for the gaming group I am in I thougth \"Why not! Lets do it in Vue!\", so have a day later I had <a href=\"https://abaddongaming.eu/\">this</a>, at the point of writing this article it is not done yet. There is still filler text in the news cards, because there is no backend to get news from. But its getting there.",
+"images": 1
+},
+{
+"name":"Website updates",
+"date":"2020-04-20",
+"author":"Wouter",
+"innerHTML":"Hi! I just made a small update to the website. First of there is a new page, it's hidden so have fun finding it. I also added a favicon. Should have done this a long time ago, better late then never. I am still planning on making a new website written in vue. But I don't really like designing websites, I find it hard to make something which is good looking and unique. I can also remake this design in vue, but it could use a nice refresh.</p><p>For now I have updated some of the information and ofcourse added the favicon, which is inspired by one of my favourite games, <a href=\"https://store.steampowered.com/app/739540/Break_the_Game/\">Break the Game</a>.</p>",
+"images": 1
+},
+{
+"name":"Script repo & New button panel",
+"date":"2020-06-17",
+"author":"Wouter",
+"innerHTML":"Welcome back! It's been been quite some time since I posted a new project update, Time flies! I have a couple of things to share. First of, I'm (almost) done with my current college degree. I finished everything in time with good grades, so I am not expecting anything special. The school is still deciding if there will be a ceremony (because of Covid-19). But I'm basicly done! My current plan for next year following a new degree at The Hague University of Applied sciences (Delft campus). But now, the title of this article. First of; I opened a new repository on Github so I can store my homebuild scripts which I use to make some administration tasks easier. There is not much in there now, but I did at my new Wireguard client creation script. More will follow. Also I made a new version of my button panel project, this time with a custom PCB! I am realy happy with the outcome of the electronics. It works really well and is way more reliable then the older version which is quite fragile inside. I might revisit the case design. The back panel warped quite a lot, so the backpanel does not fit as nice as I had hoped for. I might reprint it in a better orientation.",
+"images": 3
+}
+]
+
