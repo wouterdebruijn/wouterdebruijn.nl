@@ -14,10 +14,15 @@ export default function Header(props: JSX.HTMLAttributes<HTMLHeadElement>) {
 
   const [subtitle, setSubtitle] = useState("Software Engineer");
 
+  function setRandomSubtitle(currentTitle: string) {
+    const otherTitles = titles.filter((title) => title !== currentTitle);
+    const randomIndex = Math.floor(Math.random() * otherTitles.length);
+    setSubtitle(otherTitles[randomIndex]);
+  }
+
   useEffect(() => {
     const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * titles.length);
-      setSubtitle(titles[randomIndex]);
+      setRandomSubtitle(subtitle);
     }, 2000);
     return () => clearInterval(interval);
   }, []);
@@ -26,7 +31,7 @@ export default function Header(props: JSX.HTMLAttributes<HTMLHeadElement>) {
     <>
       <header
         {...props}
-        class="bg-primary flex flex-col justify-center h-64 items-center font-teko relative"
+        class="bg-primary flex flex-col justify-center h-72 items-center font-teko relative"
       >
         <h1 class="text-6xl font-bold text-white">Wouter de Bruijn</h1>
         <h2 class="text-4xl">{subtitle}</h2>

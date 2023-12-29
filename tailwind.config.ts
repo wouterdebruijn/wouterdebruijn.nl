@@ -11,8 +11,8 @@ export default {
         "secondary": "#FACA3F",
         "background": "#222222",
       },
-      gridTemplateColumns: {
-        "text-section": "1fr 1fr",
+      scale: {
+        "101": "1.01",
       },
     },
     fontFamily: {
