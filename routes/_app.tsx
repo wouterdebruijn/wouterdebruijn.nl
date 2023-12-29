@@ -5,7 +5,15 @@ export default function App({ Component }: PageProps) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>portfolio</title>
+        <title>Wouter de Bruijn</title>
+        <meta name="description" content="Wouter de Bruijn" />
+        <meta name="author" content="Wouter de Bruijn" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta
+          name="keywords"
+          content="Wouter de Bruijn, Wouter, de Bruijn, Portfolio, Developer, Netwerk Engineer, Engineer"
+        />
         <link rel="stylesheet" href="/styles.css" />
         <link
           href="https://fonts.googleapis.com/css2?family=Teko&display=swap"
