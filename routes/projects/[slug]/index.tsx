@@ -53,6 +53,22 @@ export default function Project({ data, url }: PageProps<Project>) {
             }),
           }}
         />
+        <div class="mt-4 text-right text-gray-300">
+          <p class="text-xs m-0">
+            Created: {data.created.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
+          <p class="text-xs m-0">
+            Last edit: {data.updated.toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </p>
+        </div>
       </SlopedContainer>
     </div>
   );
