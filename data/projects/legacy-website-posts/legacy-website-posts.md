@@ -120,7 +120,7 @@ to add a modern style dashboard to it. I would like to write this is Vue3, but I
 won't be working on this project alone. So I will have to discuss this with the
 rest of the project group.
 
-![Slurp](minecraft-screenshot.jpeg.jpeg)
+![Slurp](minecraft-screenshot.jpeg)
 
 ## 2021-07-29 Summertime!
 
