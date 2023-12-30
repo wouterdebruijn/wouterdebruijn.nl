@@ -35,7 +35,9 @@ export default function Project({ data, url }: PageProps<Project>) {
           </div>
           <div>
             <h1 class="text-5xl">{data.title}</h1>
-            <p class="text=xl">{data.description}</p>
+            <p class="hidden text-xl max-w-3xl ml-auto lg:block">
+              {data.description}
+            </p>
           </div>
         </div>
       </GenericContainer>
