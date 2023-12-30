@@ -19,7 +19,7 @@ export function ProjectCard(props: ProjectCardProps) {
           backgroundImage: `url(/projects/${slug}/${cover})`,
         }}
       >
-        <section class="bg-black bg-opacity-80 hover:bg-opacity-60 hover:scale-101 transition-all duration-300 ease-in-out p-3 w-full h-full">
+        <section class="bg-black bg-opacity-50 hover:bg-opacity-70 hover:scale-101 transition-all duration-300 ease-in-out p-3 w-full h-full">
           <h2 class="text-2xl">{title}</h2>
           <p class="font-roboto">{description}</p>
         </section>
