@@ -3,13 +3,16 @@ import { useEffect, useState } from "preact/hooks";
 
 export default function Header(props: JSX.HTMLAttributes<HTMLHeadElement>) {
   const titles = [
-    "Software Engineer",
-    "Full Stack Developer",
-    "Network Engineer",
+    "Software engineer",
+    "Full stack developer",
+    "Network engineer",
     "Very cool guy",
     "Owner of a cool website",
     "Homelab enthusiast",
     "Linux user",
+    "Thinking with portals",
+    "Scripting my way through life",
+    "WoIP, Wouter over IP",
   ];
 
   const [subtitle, setSubtitle] = useState("Software Engineer");
