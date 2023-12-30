@@ -9,13 +9,14 @@ export default function Header(props: JSX.HTMLAttributes<HTMLHeadElement>) {
     "Very cool guy",
     "Owner of a cool website",
     "Homelab enthusiast",
-    "Linux user",
     "Thinking with portals",
     "Scripting my way through life",
     "WoIP, Wouter over IP",
+    "Linux Guru",
+    "The guy that knows stuff",
   ];
 
-  const [subtitle, setSubtitle] = useState("Software Engineer");
+  const [subtitle, setSubtitle] = useState("Network engineer");
 
   function setRandomSubtitle(currentTitle: string) {
     const otherTitles = titles.filter((title) => title !== currentTitle);
