@@ -5,8 +5,32 @@ import { MonitorIllustration } from "../components/svg/MonitorIllustration.tsx";
 import { GenericText } from "../components/GenericText.tsx";
 import { JavascriptIllustration } from "../components/svg/JavascriptIllustration.tsx";
 import { ProjectCard } from "../components/ProjectCard.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { listProjects, Project } from "../utils/projects.ts";
 
-export default function Home() {
+export const handler: Handlers<Omit<Project, "content">[]> = {
+  async GET(req, ctx) {
+    const projects = await listProjects();
+    return ctx.render(projects);
+  },
+};
+
+export default function Home({ data }: PageProps<Omit<Project, "content">[]>) {
+  function ProjectList() {
+    return (
+      <div class="mt-16 grid gap-2 container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+        {data.map((project) => (
+          <ProjectCard
+            title={project.title}
+            description={project.description}
+            cover={project.cover}
+            slug={project.slug}
+          />
+        ))}
+      </div>
+    );
+  }
+
   return (
     <>
       <Header>
@@ -61,44 +85,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div class="mt-16 grid gap-2 container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-          <ProjectCard
-            title="Project Vulputate"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit amet venenatis urna cursus eget nunc scelerisque."
-            image="https://via.placeholder.com/150"
-            link="#"
-          />
-          <ProjectCard
-            title="Project Mauris"
-            description="Vulputate odio ut enim blandit volutpat maecenas volutpat blandit. At imperdiet dui accumsan sit. Enim lobortis scelerisque fermentum dui faucibus in ornare."
-            image="https://via.placeholder.com/150"
-            link="#"
-          />
-          <ProjectCard
-            title="Project Ullamcorper"
-            description="Est placerat in egestas erat imperdiet sed euismod. Mattis vulputate enim nulla aliquet. Risus in hendrerit gravida rutrum quisque non. Posuere ac ut consequat semper viverra. Turpis in eu mi bibendum neque. Scelerisque felis imperdiet proin fermentum. Vitae proin sagittis nisl rhoncus."
-            image="https://via.placeholder.com/150"
-            link="#"
-          />
-          <ProjectCard
-            title="Project Blandit"
-            description="Ullamcorper velit sed ullamcorper morbi tincidunt. Sit amet luctus venenatis lectus magna fringilla urna porttitor. Mauris augue neque gravida in fermentum et sollicitudin. Purus non enim praesent elementum facilisis leo vel fringilla. Aliquam nulla facilisi cras fermentum odio. In nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque."
-            image="https://via.placeholder.com/150"
-            link="#"
-          />
-          <ProjectCard
-            title="Project Odio"
-            description="Arcu cursus vitae congue mauris rhoncus aenean vel elit. Odio tempor orci dapibus ultrices in iaculis nunc sed. Blandit aliquam etiam erat velit scelerisque in dictum. Sodales neque sodales ut etiam sit amet nisl purus in. Odio euismod lacinia at quis risus. Adipiscing tristique risus nec feugiat. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. "
-            image="https://via.placeholder.com/150"
-            link="#"
-          />
-          <ProjectCard
-            title="Project Adipiscing"
-            description="Lorem ipsum dolor sit amet consectetur. Eget lorem dolor sed viverra ipsum nunc aliquet. At elementum eu facilisis sed odio morbi. Adipiscing elit pellentesque habitant morbi. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Vulputate mi sit amet mauris commodo quis. Neque viverra justo nec ultrices dui sapien eget. Lacus sed viverra tellus in. Fermentum et sollicitudin ac orci phasellus. At lectus urna duis convallis."
-            image="https://via.placeholder.com/150"
-            link="#"
-          />
-        </div>
+        <ProjectList />
       </GenericContainer>
     </>
   );
