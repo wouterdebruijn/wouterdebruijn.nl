@@ -6,12 +6,12 @@ interface GenericTextProps extends JSX.HTMLAttributes<HTMLDivElement> {
 
 export function GenericText(props: GenericTextProps) {
   return (
-    <div
+    <section
       {...props}
       class="text-white"
     >
       <h1 class="text-2xl font-bold">{props.title}</h1>
       {props.children}
-    </div>
+    </section>
   );
 }
