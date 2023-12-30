@@ -35,10 +35,6 @@
     @apply rounded-sm shadow-md my-4;
   }
 
-  a {
-    @apply text-secondary;
-  }
-
   pre {
     @apply bg-gray-800 rounded-sm p-2 my-4;
   }
