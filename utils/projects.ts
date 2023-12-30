@@ -7,6 +7,8 @@ export interface Project {
   tags: string[];
   cover: string;
   content: string;
+  created: Date;
+  updated: Date;
 }
 
 export async function loadProject(slug: string): Promise<Project> {
@@ -21,6 +23,8 @@ export async function loadProject(slug: string): Promise<Project> {
     const description = attrs.description as string;
     const tags = attrs.tags as string[];
     const cover = attrs.cover as string;
+    const created = new Date(attrs.created as string);
+    const updated = new Date(attrs.updated as string);
 
     return {
       title,
@@ -29,6 +33,8 @@ export async function loadProject(slug: string): Promise<Project> {
       tags,
       cover,
       content: body,
+      created,
+      updated,
     };
   } catch (error) {
     console.error(error);
@@ -54,6 +60,8 @@ export async function listProjects(): Promise<
       const description = attrs.description as string;
       const tags = attrs.tags as string[];
       const cover = attrs.cover as string;
+      const created = new Date(attrs.created as string);
+      const updated = new Date(attrs.updated as string);
 
       projects.push({
         title,
@@ -61,6 +69,8 @@ export async function listProjects(): Promise<
         description,
         tags,
         cover,
+        created,
+        updated,
       });
     }
 
