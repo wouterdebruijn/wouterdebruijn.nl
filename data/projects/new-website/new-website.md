@@ -87,4 +87,4 @@ to do that yet. I am excited to see how this website will develop over time.
 Well, here we are, with a dilemma. I have a bunch of old project posts from the
 old website. Which don't fit into the new design at all. But of course I don't
 want to delete them. i have created a special project post for these legacy
-posts. You can find them [here](/projects/legacy-posts).
+posts. You can find them [here](/projects/legacy-website-posts).
