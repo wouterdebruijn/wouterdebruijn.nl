@@ -33,6 +33,15 @@ export default function Home({ data }: PageProps<Omit<Project, "content">[]>) {
 
   return (
     <>
+      <head>
+        <title>Wouter de Bruijn</title>
+        <meta name="description" content="Wouter de Bruijn" />
+        <meta
+          name="keywords"
+          content="Wouter de Bruijn, Wouter, de Bruijn, Portfolio, Developer, Netwerk Engineer, Engineer"
+        />
+      </head>
+
       <Header>
       </Header>
 
