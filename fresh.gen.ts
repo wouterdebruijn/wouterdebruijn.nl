@@ -8,6 +8,8 @@ import * as $index from "./routes/index.tsx";
 import * as $projects_slug_image_ from "./routes/projects/[slug]/[image].tsx";
 import * as $projects_slug_index from "./routes/projects/[slug]/index.tsx";
 import * as $Header from "./islands/Header.tsx";
+import * as $PlausibleLoader from "./islands/PlausibleLoader.tsx";
+import * as $ProjectCard from "./islands/ProjectCard.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -20,6 +22,8 @@ const manifest = {
   },
   islands: {
     "./islands/Header.tsx": $Header,
+    "./islands/PlausibleLoader.tsx": $PlausibleLoader,
+    "./islands/ProjectCard.tsx": $ProjectCard,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
