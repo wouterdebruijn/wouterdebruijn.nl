@@ -18,6 +18,10 @@ export const handler: Handlers<Project> = {
 };
 
 export default function Project({ data, url }: PageProps<Project>) {
+  if (Deno.env.get("DENO_DEPLOYMENT_ID")) {
+    url.protocol = "https";
+  }
+
   return (
     <div class="bg-background text-white">
       <Head>
