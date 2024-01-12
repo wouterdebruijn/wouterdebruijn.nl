@@ -1,4 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
+import PlausibleLoader from "../islands/PlausibleLoader.tsx";
 export default function App({ Component }: PageProps) {
   return (
     <html>
@@ -25,6 +26,7 @@ export default function App({ Component }: PageProps) {
         />
       </head>
       <body class="font-teko">
+        <PlausibleLoader />
         <Component />
       </body>
     </html>

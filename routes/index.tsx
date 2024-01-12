@@ -4,7 +4,7 @@ import { GenericContainer } from "../components/GenericContainer.tsx";
 import { MonitorIllustration } from "../components/svg/MonitorIllustration.tsx";
 import { GenericText } from "../components/GenericText.tsx";
 import { JavascriptIllustration } from "../components/svg/JavascriptIllustration.tsx";
-import { ProjectCard } from "../components/ProjectCard.tsx";
+import { ProjectCard } from "../islands/ProjectCard.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { listProjects, Project } from "../utils/projects.ts";
 
