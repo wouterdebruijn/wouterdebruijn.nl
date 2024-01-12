@@ -27,8 +27,12 @@ export default function Project({ data, url }: PageProps<Project>) {
       <Head>
         <title>{data.title}</title>
         <meta name="description" content={data.description} />
-        <meta name="tags" content={data.tags.join(", ")} />
-        <meta name="author" content="Wouter de Bruijn" />
+        <meta
+          name="keywords"
+          content={`Wouter de Bruijn, Wouter, de Bruijn, Portfolio, ${
+            data.tags.join(", ")
+          }`}
+        />
         <link rel="stylesheet" href="/projects.css" />
       </Head>
 
