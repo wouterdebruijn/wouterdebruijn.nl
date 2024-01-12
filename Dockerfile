@@ -1,4 +1,4 @@
-FROM denoland/deno:1.39.1
+FROM denoland/deno:1.39.2
 
 ARG GIT_REVISION
 ENV DENO_DEPLOYMENT_ID=${GIT_REVISION}
@@ -8,13 +8,19 @@ EXPOSE 8000
 
 WORKDIR /app
 
-# Prefer not to run as root.
-
-# These steps will be re-run upon each file change in your working directory:
 ADD . .
-# Compile the main app so that it doesn't need to be compiled each startup/entry.
-RUN deno task cache
-RUN deno task build
+RUN chown -R deno:deno /app
 
+RUN mkdir -p /home/deno/.cache/deno
+RUN chown -R deno:deno /home/deno
+
+# Prefer not to run as root.
+USER deno
+
+# Compile the main app so that it doesn't need to be compiled each startup/entry.
+RUN deno run -A dev.ts build
+
+# Cache the dependencies
+RUN deno cache main.ts
 
 CMD ["run", "--allow-read", "--allow-env", "--allow-net", "main.ts"]
