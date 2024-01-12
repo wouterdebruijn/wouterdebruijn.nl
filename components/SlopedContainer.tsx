@@ -6,25 +6,31 @@ export function SlopedContainer(props: JSX.HTMLAttributes<HTMLDivElement>) {
       {...props}
       class="bg-background relative py-24 flex justify-center items-center"
     >
-      {/* Above triangle */}
-      <div
-        class="absolute top-0 left-0 w-full h-16 bg-primary min-w-[100rem]"
-        style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 20%)",
-        }}
-      />
+      {/* Slanted border */}
+      <div class="absolute top-0 left-0 right-0 h-10 bg-background">
+        <svg
+          class="w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="0,0 100,0 100,100" fill="#1AE0BD" />
+        </svg>
+      </div>
 
       <div class="container px-8">
         {props.children}
       </div>
 
-      {/* Below triangle inverse */}
-      <div
-        class="absolute bottom-0 left-0 w-full h-16 bg-primary min-w-[100rem]"
-        style={{
-          clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 80%)",
-        }}
-      />
+      {/* Slanted border */}
+      <div class="absolute bottom-0 left-0 right-0 h-10 bg-background">
+        <svg
+          class="w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="0,100 100,0 100,100" fill="#1AE0BD" />
+        </svg>
+      </div>
     </div>
   );
 }
