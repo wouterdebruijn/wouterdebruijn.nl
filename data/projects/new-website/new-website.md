@@ -63,7 +63,7 @@ read projects and limited project customization due to the fact that everything
 was displayed on the home page. This new design brings a lot of changes, most of
 the styling uses [TailWindCSS](https://tailwindcss.com/), but the project pages
 use a customized version of Github's [Primer](https://primer.style/) styling.
-This is mostly because of some technical reasons. But I while developing the
+This is mostly because of some technical reasons. But while developing the
 website I started to like the readability and simplicity of the Primer styling.
 
 Unlike the previous website, I actually designed (part) of the website before
