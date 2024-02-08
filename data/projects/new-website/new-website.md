@@ -17,7 +17,7 @@ updated: 2023-12-30
 
 # New Website
 
-Hey There! Welcome to my brand new website! As you can see, the site has changes
+Hey There! Welcome to my brand new website! As you can see, the site has changed
 substantially, I am using a brand new tech-stack, design and general approach
 for writing project details or blog posts. In this post I will be going over
 these different changes and why I made them.
