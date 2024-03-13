@@ -3,8 +3,8 @@ title: Legacy website posts
 description: An archive of my older project posts.
 tags: []
 cover: grafana-dashboard.png
-created: 2023-12-30
-updated: 2023-12-30
+created: 2023-12-29
+updated: 2023-12-29
 ---
 
 # Legacy website posts
