@@ -1,11 +1,11 @@
-import Header from "../islands/Header.tsx";
-import { SlopedContainer } from "../components/SlopedContainer.tsx";
-import { GenericContainer } from "../components/GenericContainer.tsx";
-import { MonitorIllustration } from "../components/svg/MonitorIllustration.tsx";
-import { GenericText } from "../components/GenericText.tsx";
-import { JavascriptIllustration } from "../components/svg/JavascriptIllustration.tsx";
-import { ProjectCard } from "../islands/ProjectCard.tsx";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import { GenericContainer } from "../components/GenericContainer.tsx";
+import { GenericText } from "../components/GenericText.tsx";
+import { SlopedContainer } from "../components/SlopedContainer.tsx";
+import { JavascriptIllustration } from "../components/svg/JavascriptIllustration.tsx";
+import { MonitorIllustration } from "../components/svg/MonitorIllustration.tsx";
+import Header from "../islands/Header.tsx";
+import { ProjectCard } from "../islands/ProjectCard.tsx";
 import { listProjects, Project } from "../utils/projects.ts";
 
 export const handler: Handlers<Omit<Project, "content">[]> = {
@@ -19,14 +19,16 @@ export default function Home({ data }: PageProps<Omit<Project, "content">[]>) {
   function ProjectList() {
     return (
       <div class="grid gap-2 container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        {data.map((project) => (
-          <ProjectCard
-            title={project.title}
-            description={project.description}
-            cover={project.cover}
-            slug={project.slug}
-          />
-        ))}
+        {data.sort((p1, p2) => p1.created.getTime() - p2.created.getTime()).map(
+          (project) => (
+            <ProjectCard
+              title={project.title}
+              description={project.description}
+              cover={project.cover}
+              slug={project.slug}
+            />
+          ),
+        )}
       </div>
     );
   }
@@ -42,8 +44,7 @@ export default function Home({ data }: PageProps<Omit<Project, "content">[]>) {
         />
       </head>
 
-      <Header>
-      </Header>
+      <Header />
 
       <SlopedContainer>
         <div class="items-center grid gap-8 grid-cols-1 lg:grid-cols-2 lg:gap-40">
