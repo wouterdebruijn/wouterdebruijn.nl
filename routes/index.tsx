@@ -19,7 +19,7 @@ export default function Home({ data }: PageProps<Omit<Project, "content">[]>) {
   function ProjectList() {
     return (
       <div class="grid gap-2 container grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-        {data.sort((p1, p2) => p1.created.getTime() - p2.created.getTime()).map(
+        {data.sort((p1, p2) => p2.created.getTime() - p1.created.getTime()).map(
           (project) => (
             <ProjectCard
               title={project.title}
