@@ -11,6 +11,8 @@ export interface Project {
   updated: Date;
 }
 
+export type ProjectThumbnail = Omit<Project, "content">;
+
 export async function loadProject(slug: string): Promise<Project> {
   try {
     const content = await Deno.readTextFile(
