@@ -1,4 +1,4 @@
-import { extract } from "$std/front_matter/any.ts";
+import { extract } from "$front_matter/any.ts";
 
 export interface Project {
   title: string;
