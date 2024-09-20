@@ -8,16 +8,12 @@ export default function Experience() {
       <div class="items-center grid gap-8 grid-cols-1 lg:grid-cols-2 lg:gap-40">
         <GenericText title="~$ cat experience">
           <p class="font-roboto">
-            I am currently studying Network and System Engineering at the Hague
-            University of Applied Sciences. I also work as a software developer
-            at{" "}
-            <a class="text-tertiary" href="https://hanexservice.eu/">
-              Hanex Service
-            </a>{" "}
-            and as a network/ system engineer at{" "}
-            <a class="text-tertiary" href="https://yieldergroup.com/">
-              Yielder Group
-            </a>.
+            I am currently working as a Software Engineer at{" "}
+            <a href="https://trelion.nl">Trelion</a>, where I work on a project
+            as a Network Automation Engineer. I am responsible for developing
+            and maintaining a network automation platform. Combining various
+            tooling like Netbox, NAPALM, Ansible, and custom scripts to automate
+            network configurations and monitoring.
           </p>
           <p class="font-roboto pt-2">
             I started studying IT at{" "}
@@ -29,7 +25,8 @@ export default function Experience() {
             Engineering at the{" "}
             <a class="text-tertiary" href="https://www.thuas.com/">
               Hague University of Applied Sciences
-            </a>.
+            </a>{" "}
+            where I graduated in 2024, and got my "Bachelor of Science" degree.
           </p>
           <p class="font-roboto">
             As part of my studies I have done a few internships, which continued
