@@ -3,9 +3,9 @@ const TARGET_DOMAIN = "wouterdebruijn.nl";
 // Thanks to https://github.com/Schotsl
 
 export default async (event = "pageview") => {
-  const agent = window.navigator.userAgent;
-  const width = window.innerWidth;
-  const url = window.location.href;
+  const agent = globalThis.navigator.userAgent;
+  const width = globalThis.innerWidth;
+  const url = globalThis.location.href;
 
   if (url.includes("localhost")) {
     console.log("Not sending event to Plausible on localhost.");
