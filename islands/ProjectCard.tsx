@@ -1,5 +1,4 @@
 import { JSX } from "preact/jsx-runtime";
-import plausible from "../utils/plausible.ts";
 
 interface ProjectCardProps extends JSX.HTMLAttributes<HTMLDivElement> {
   title: string;
@@ -11,15 +10,11 @@ interface ProjectCardProps extends JSX.HTMLAttributes<HTMLDivElement> {
 export function ProjectCard(props: ProjectCardProps) {
   const { title, description, cover, slug } = props;
 
-  function onCardClick() {
-    plausible("Open project");
-  }
-
   return (
-    <a href={`/projects/${slug}`} onClick={onCardClick}>
+    <a href={`/projects/${slug}`}>
       <div
         id={slug}
-        class={`bg-cover w-full aspect-video text-white text-ellipsis overflow-hidden shadow-lg`}
+        class={`bg-cover bg-center w-full aspect-video text-white text-ellipsis overflow-hidden shadow-lg`}
         style={{
           backgroundImage: `url(/projects/${slug}/${cover})`,
         }}
