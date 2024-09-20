@@ -64,6 +64,11 @@ export async function listProjects(): Promise<
       const cover = attrs.cover as string;
       const created = new Date(attrs.created as string);
       const updated = new Date(attrs.updated as string);
+      const published = attrs.published as boolean;
+
+      if (!published) {
+        continue;
+      }
 
       projects.push({
         title,
@@ -76,7 +81,7 @@ export async function listProjects(): Promise<
       });
     }
 
-    return projects;
+    return projects.sort((a, b) => b.created.getTime() - a.created.getTime());
   } catch (error) {
     console.error(error);
     throw new Error("Could not load projects");

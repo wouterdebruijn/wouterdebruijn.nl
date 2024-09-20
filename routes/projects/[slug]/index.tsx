@@ -1,9 +1,28 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
-import { loadProject, Project } from "../../../utils/projects.ts";
-import { render } from "$gfm/mod.ts";
-import { SlopedContainer } from "../../../components/SlopedContainer.tsx";
+import { Handlers, PageProps } from "$fresh/server.ts";
+import { render, Renderer } from "$gfm/mod.ts";
 import { GenericContainer } from "../../../components/GenericContainer.tsx";
+import { SlopedContainer } from "../../../components/SlopedContainer.tsx";
+import { loadProject, Project } from "../../../utils/projects.ts";
+
+class ExtendedRenderer extends Renderer {
+  image(src: string, _title: string | null, alt: string | null): string {
+    // Render the GenericImage component using preact/jsx-runtime
+    return `
+      <div class="relative w-full h-full">
+      <img
+        class="w-full h-full object-cover"
+        src="${src}"
+        loading="lazy"
+        decoding="async"
+        width="100%"
+        height="100%"
+        alt="${alt}"
+      />
+    </div>
+    `;
+  }
+}
 
 export const handler: Handlers<Project> = {
   async GET(req, ctx) {
@@ -58,6 +77,7 @@ export default function Project({ data, url }: PageProps<Project>) {
           dangerouslySetInnerHTML={{
             __html: render(data.content, {
               mediaBaseUrl: `${url}/`,
+              renderer: new ExtendedRenderer(),
             }),
           }}
         />
