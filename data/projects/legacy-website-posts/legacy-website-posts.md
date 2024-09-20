@@ -5,6 +5,7 @@ tags: []
 cover: grafana-dashboard.png
 created: 2023-12-30
 updated: 2023-12-30
+published: true
 ---
 
 # Legacy website posts

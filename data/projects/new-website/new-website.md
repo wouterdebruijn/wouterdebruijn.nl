@@ -1,7 +1,7 @@
 ---
 title: New Website
 description: Finally replacing my old website with a brand new one! This post goes over the tech stack, design and general purpose of the fresh new website.
-tags: 
+tags:
   - website
   - development
   - fresh
@@ -13,6 +13,7 @@ tags:
 cover: figma-design.webp
 created: 2023-12-30
 updated: 2023-12-30
+published: true
 ---
 
 # New Website
