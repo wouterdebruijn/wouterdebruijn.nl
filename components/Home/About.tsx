@@ -3,6 +3,12 @@ import { SlopedContainer } from "../SlopedContainer.tsx";
 import { MonitorIllustration } from "../svg/MonitorIllustration.tsx";
 
 export function About() {
+  const birthDate = new Date("2001-08-13");
+
+  const age = Math.floor(
+    (new Date().getTime() - birthDate.getTime()) / 3.15576e10,
+  );
+
   return (
     <SlopedContainer>
       <div class="items-center grid gap-8 grid-cols-1 lg:grid-cols-2 lg:gap-40">
@@ -12,10 +18,10 @@ export function About() {
         <GenericText title="~$ whois">
           <p class="font-roboto text-white">
             {/* About me text */}
-            I am Wouter de Bruijn a 22 year old guy who is interested in all
-            kinds of technology. I experiment with Linux servers, computer
-            networking, software development, embedded devices and other various
-            bits of technology.
+            I am Wouter de Bruijn a {age}{" "}
+            year old guy who is interested in all kinds of technology. I
+            experiment with Linux servers, computer networking, software
+            development, embedded devices and other various bits of technology.
           </p>
           <p class="font-roboto text-white pt-2">
             I have been interested in technology since I was a little kid. At
