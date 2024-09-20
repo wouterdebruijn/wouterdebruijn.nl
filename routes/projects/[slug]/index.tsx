@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { render, Renderer } from "$gfm/mod.ts";
+import { render, Renderer } from "@deno/gfm";
 import { GenericContainer } from "../../../components/GenericContainer.tsx";
 import { SlopedContainer } from "../../../components/SlopedContainer.tsx";
 import { loadProject, Project } from "../../../utils/projects.ts";

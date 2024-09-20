@@ -10,7 +10,7 @@ import * as $projects_slug_index from "./routes/projects/[slug]/index.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $PlausibleLoader from "./islands/PlausibleLoader.tsx";
 import * as $ProjectCard from "./islands/ProjectCard.tsx";
-import type { Manifest } from "$fresh/server.ts";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
