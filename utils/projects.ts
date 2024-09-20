@@ -1,4 +1,16 @@
-import { extract } from "$front_matter/any.ts";
+import { extractYaml } from "@std/front-matter";
+
+export interface ProjectAttributes {
+  title: string;
+  slug: string;
+  description: string;
+  tags: string[];
+  cover: string;
+  content: string;
+  created: string;
+  updated: string;
+  published: boolean;
+}
 
 export interface Project {
   title: string;
@@ -9,6 +21,7 @@ export interface Project {
   content: string;
   created: Date;
   updated: Date;
+  published: boolean;
 }
 
 export type ProjectThumbnail = Omit<Project, "content">;
@@ -56,15 +69,15 @@ export async function listProjects(): Promise<
         `./data/projects/${folder.name}/${folder.name}.md`,
       );
 
-      const { attrs } = extract(content);
+      const { attrs } = extractYaml<ProjectAttributes>(content);
 
-      const title = attrs.title as string;
-      const description = attrs.description as string;
-      const tags = attrs.tags as string[];
-      const cover = attrs.cover as string;
-      const created = new Date(attrs.created as string);
-      const updated = new Date(attrs.updated as string);
-      const published = attrs.published as boolean;
+      const title = attrs.title;
+      const description = attrs.description;
+      const tags = attrs.tags;
+      const cover = attrs.cover;
+      const created = new Date(attrs.created);
+      const updated = new Date(attrs.updated);
+      const published = attrs.published;
 
       if (!published) {
         continue;
@@ -78,6 +91,7 @@ export async function listProjects(): Promise<
         cover,
         created,
         updated,
+        published,
       });
     }
 
