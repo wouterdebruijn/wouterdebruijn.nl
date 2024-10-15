@@ -6,7 +6,7 @@ import Header from "../islands/Header.tsx";
 import { listProjects, ProjectThumbnail } from "../utils/projects.ts";
 
 export const handler: Handlers<ProjectThumbnail[]> = {
-  async GET(req, ctx) {
+  async GET(_req, ctx) {
     const projects = await listProjects();
     return ctx.render(projects);
   },
