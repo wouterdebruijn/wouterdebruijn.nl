@@ -25,7 +25,7 @@ class ExtendedRenderer extends Renderer {
 }
 
 export const handler: Handlers<Project> = {
-  async GET(req, ctx) {
+  async GET(_req, ctx) {
     const project = await loadProject(ctx.params.slug);
 
     if (!project) {
