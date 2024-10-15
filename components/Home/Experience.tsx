@@ -9,11 +9,12 @@ export default function Experience() {
         <GenericText title="~$ cat experience">
           <p class="font-roboto">
             I am currently working as a Software Engineer at{" "}
-            <a href="https://trelion.nl">Trelion</a>, where I work on a project
-            as a Network Automation Engineer. I am responsible for developing
-            and maintaining a network automation platform. Combining various
-            tooling like Netbox, NAPALM, Ansible, and custom scripts to automate
-            network configurations and monitoring.
+            <a class="text-tertiary" href="https://trelion.nl">Trelion</a>,
+            where I work on a project as a Network Automation Engineer. I am
+            responsible for developing and maintaining a network automation
+            platform. Combining various tooling like Netbox, NAPALM, Ansible,
+            and custom scripts to automate network configurations and
+            monitoring.
           </p>
           <p class="font-roboto pt-2">
             I started studying IT at{" "}
