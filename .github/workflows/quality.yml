@@ -2,7 +2,7 @@ name: Deno format and lint
 
 on:
   push:
-  
+
 jobs:
   quality:
     name: Quality

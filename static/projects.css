@@ -62,54 +62,54 @@
   --color-canvas-subtle: #292929;
   --color-border-default: #80858b;
   --color-border-muted: #515761;
-  --color-neutral-muted: rgba(110, 118, 129, .4);
-  --color-accent-fg: #FACA3F;
+  --color-neutral-muted: rgba(110, 118, 129, 0.4);
+  --color-accent-fg: #faca3f;
   --color-accent-emphasis: rgb(250, 163, 63);
-  --color-danger-fg: #f85149
+  --color-danger-fg: #f85149;
 }
 
 .markdown-body {
   word-wrap: break-word;
-  line-height: 1.5
+  line-height: 1.5;
 }
 
 .markdown-body:before {
   content: "";
-  display: table
+  display: table;
 }
 
 .markdown-body:after {
   clear: both;
   content: "";
-  display: table
+  display: table;
 }
 
-.markdown-body>:first-child {
-  margin-top: 0 !important
+.markdown-body > :first-child {
+  margin-top: 0 !important;
 }
 
-.markdown-body>:last-child {
-  margin-bottom: 0 !important
+.markdown-body > :last-child {
+  margin-bottom: 0 !important;
 }
 
 .markdown-body a:not([href]) {
   color: inherit;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .markdown-body .absent {
-  color: var(--color-danger-fg)
+  color: var(--color-danger-fg);
 }
 
 .markdown-body .anchor {
   float: left;
   margin-left: -20px;
   padding-right: 4px;
-  line-height: 1
+  line-height: 1;
 }
 
 .markdown-body .anchor:focus {
-  outline: none
+  outline: none;
 }
 
 .markdown-body p,
@@ -121,29 +121,29 @@
 .markdown-body pre,
 .markdown-body details {
   margin-top: 0;
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .markdown-body hr {
-  height: .25em;
+  height: 0.25em;
   background-color: var(--color-border-default);
   border: 0;
   margin: 24px 0;
-  padding: 0
+  padding: 0;
 }
 
 .markdown-body blockquote {
   color: var(--color-fg-muted);
-  border-left: .25em solid var(--color-border-default);
-  padding: 0 1em
+  border-left: 0.25em solid var(--color-border-default);
+  padding: 0 1em;
 }
 
-.markdown-body blockquote>:first-child {
-  margin-top: 0
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
 }
 
-.markdown-body blockquote>:last-child {
-  margin-bottom: 0
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
 }
 
 .markdown-body h1,
@@ -155,7 +155,7 @@
   font-weight: var(--base-text-weight-semibold, 600);
   margin-top: 24px;
   margin-bottom: 16px;
-  line-height: 1.25
+  line-height: 1.25;
 }
 
 .markdown-body h1 .octicon-link,
@@ -166,7 +166,7 @@
 .markdown-body h6 .octicon-link {
   color: var(--color-fg-default);
   vertical-align: middle;
-  visibility: hidden
+  visibility: hidden;
 }
 
 .markdown-body h1:hover .anchor,
@@ -175,7 +175,7 @@
 .markdown-body h4:hover .anchor,
 .markdown-body h5:hover .anchor,
 .markdown-body h6:hover .anchor {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .markdown-body h1:hover .anchor .octicon-link,
@@ -184,7 +184,7 @@
 .markdown-body h4:hover .anchor .octicon-link,
 .markdown-body h5:hover .anchor .octicon-link,
 .markdown-body h6:hover .anchor .octicon-link {
-  visibility: visible
+  visibility: visible;
 }
 
 .markdown-body h1 tt,
@@ -200,36 +200,36 @@
 .markdown-body h6 tt,
 .markdown-body h6 code {
   font-size: inherit;
-  padding: 0 .2em
+  padding: 0 0.2em;
 }
 
 .markdown-body h1 {
   border-bottom: 1px solid var(--color-border-muted);
-  padding-bottom: .3em;
-  font-size: 2em
+  padding-bottom: 0.3em;
+  font-size: 2em;
 }
 
 .markdown-body h2 {
   border-bottom: 1px solid var(--color-border-muted);
-  padding-bottom: .3em;
-  font-size: 1.5em
+  padding-bottom: 0.3em;
+  font-size: 1.5em;
 }
 
 .markdown-body h3 {
-  font-size: 1.25em
+  font-size: 1.25em;
 }
 
 .markdown-body h4 {
-  font-size: 1em
+  font-size: 1em;
 }
 
 .markdown-body h5 {
-  font-size: .875em
+  font-size: 0.875em;
 }
 
 .markdown-body h6 {
   color: var(--color-fg-muted);
-  font-size: .85em
+  font-size: 0.85em;
 }
 
 .markdown-body summary h1,
@@ -238,7 +238,7 @@
 .markdown-body summary h4,
 .markdown-body summary h5,
 .markdown-body summary h6 {
-  display: inline-block
+  display: inline-block;
 }
 
 .markdown-body summary h1 .anchor,
@@ -247,48 +247,48 @@
 .markdown-body summary h4 .anchor,
 .markdown-body summary h5 .anchor,
 .markdown-body summary h6 .anchor {
-  margin-left: -40px
+  margin-left: -40px;
 }
 
 .markdown-body summary h1,
 .markdown-body summary h2 {
   border-bottom: 0;
-  padding-bottom: 0
+  padding-bottom: 0;
 }
 
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 2em
+  padding-left: 2em;
 }
 
 .markdown-body ul.no-list,
 .markdown-body ol.no-list {
   padding: 0;
-  list-style-type: none
+  list-style-type: none;
 }
 
-.markdown-body ol[type=a] {
-  list-style-type: lower-alpha
+.markdown-body ol[type="a"] {
+  list-style-type: lower-alpha;
 }
 
-.markdown-body ol[type=A] {
-  list-style-type: upper-alpha
+.markdown-body ol[type="A"] {
+  list-style-type: upper-alpha;
 }
 
-.markdown-body ol[type=i] {
-  list-style-type: lower-roman
+.markdown-body ol[type="i"] {
+  list-style-type: lower-roman;
 }
 
-.markdown-body ol[type=I] {
-  list-style-type: upper-roman
+.markdown-body ol[type="I"] {
+  list-style-type: upper-roman;
 }
 
 .markdown-body ol[type="1"] {
-  list-style-type: decimal
+  list-style-type: decimal;
 }
 
-.markdown-body div>ol:not([type]) {
-  list-style-type: decimal
+.markdown-body div > ol:not([type]) {
+  list-style-type: decimal;
 }
 
 .markdown-body ul ul,
@@ -296,19 +296,19 @@
 .markdown-body ol ol,
 .markdown-body ol ul {
   margin-top: 0;
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
-.markdown-body li>p {
-  margin-top: 16px
+.markdown-body li > p {
+  margin-top: 16px;
 }
 
-.markdown-body li+li {
-  margin-top: .25em
+.markdown-body li + li {
+  margin-top: 0.25em;
 }
 
 .markdown-body dl {
-  padding: 0
+  padding: 0;
 }
 
 .markdown-body dl dt {
@@ -316,12 +316,12 @@
   font-style: italic;
   font-weight: var(--base-text-weight-semibold, 600);
   margin-top: 16px;
-  padding: 0
+  padding: 0;
 }
 
 .markdown-body dl dd {
   margin-bottom: 16px;
-  padding: 0 16px
+  padding: 0 16px;
 }
 
 .markdown-body table {
@@ -331,138 +331,138 @@
   width: max-content;
   max-width: 100%;
   display: block;
-  overflow: auto
+  overflow: auto;
 }
 
 .markdown-body table th {
-  font-weight: var(--base-text-weight-semibold, 600)
+  font-weight: var(--base-text-weight-semibold, 600);
 }
 
 .markdown-body table th,
 .markdown-body table td {
   border: 1px solid var(--color-border-default);
-  padding: 6px 13px
+  padding: 6px 13px;
 }
 
 .markdown-body table tr {
   background-color: var(--color-canvas-default);
-  border-top: 1px solid var(--color-border-muted)
+  border-top: 1px solid var(--color-border-muted);
 }
 
 .markdown-body table tr:nth-child(2n) {
-  background-color: var(--color-canvas-subtle)
+  background-color: var(--color-canvas-subtle);
 }
 
 .markdown-body table img {
-  background-color: transparent
+  background-color: transparent;
 }
 
 .markdown-body img {
   max-width: 100%;
   box-sizing: content-box;
-  background-color: var(--color-canvas-default)
+  background-color: var(--color-canvas-default);
 }
 
-.markdown-body img[align=right] {
-  padding-left: 20px
+.markdown-body img[align="right"] {
+  padding-left: 20px;
 }
 
-.markdown-body img[align=left] {
-  padding-right: 20px
+.markdown-body img[align="left"] {
+  padding-right: 20px;
 }
 
 .markdown-body .emoji {
   max-width: none;
   vertical-align: text-top;
-  background-color: transparent
+  background-color: transparent;
 }
 
 .markdown-body span.frame {
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
-.markdown-body span.frame>span {
+.markdown-body span.frame > span {
   float: left;
   width: auto;
   border: 1px solid var(--color-border-default);
   margin: 13px 0 0;
   padding: 7px;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .markdown-body span.frame span img {
   float: left;
-  display: block
+  display: block;
 }
 
 .markdown-body span.frame span span {
   clear: both;
   color: var(--color-fg-default);
   padding: 5px 0 0;
-  display: block
+  display: block;
 }
 
 .markdown-body span.align-center {
   clear: both;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
-.markdown-body span.align-center>span {
+.markdown-body span.align-center > span {
   text-align: center;
   margin: 13px auto 0;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .markdown-body span.align-center span img {
   text-align: center;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .markdown-body span.align-right {
   clear: both;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
-.markdown-body span.align-right>span {
+.markdown-body span.align-right > span {
   text-align: right;
   margin: 13px 0 0;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .markdown-body span.align-right span img {
   text-align: right;
-  margin: 0
+  margin: 0;
 }
 
 .markdown-body span.float-left {
   float: left;
   margin-right: 13px;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .markdown-body span.float-left span {
-  margin: 13px 0 0
+  margin: 13px 0 0;
 }
 
 .markdown-body span.float-right {
   float: right;
   margin-left: 13px;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
-.markdown-body span.float-right>span {
+.markdown-body span.float-right > span {
   text-align: right;
   margin: 13px auto 0;
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .markdown-body code,
@@ -471,49 +471,49 @@
   background-color: var(--color-neutral-muted);
   border-radius: 6px;
   margin: 0;
-  padding: .2em .4em;
-  font-size: 85%
+  padding: 0.2em 0.4em;
+  font-size: 85%;
 }
 
 .markdown-body code br,
 .markdown-body tt br {
-  display: none
+  display: none;
 }
 
 .markdown-body del code {
   -webkit-text-decoration: inherit;
   -webkit-text-decoration: inherit;
-  text-decoration: inherit
+  text-decoration: inherit;
 }
 
 .markdown-body samp {
-  font-size: 85%
+  font-size: 85%;
 }
 
 .markdown-body pre {
-  word-wrap: normal
+  word-wrap: normal;
 }
 
 .markdown-body pre code {
-  font-size: 100%
+  font-size: 100%;
 }
 
-.markdown-body pre>code {
+.markdown-body pre > code {
   word-break: normal;
   white-space: pre;
   background: 0 0;
   border: 0;
   margin: 0;
-  padding: 0
+  padding: 0;
 }
 
 .markdown-body .highlight {
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .markdown-body .highlight pre {
   word-break: normal;
-  margin-bottom: 0
+  margin-bottom: 0;
 }
 
 .markdown-body .highlight pre,
@@ -523,7 +523,7 @@
   padding: 16px;
   font-size: 85%;
   line-height: 1.45;
-  overflow: auto
+  overflow: auto;
 }
 
 .markdown-body pre code,
@@ -536,7 +536,7 @@
   margin: 0;
   padding: 0;
   display: inline;
-  overflow: visible
+  overflow: visible;
 }
 
 .markdown-body .csv-data td,
@@ -546,52 +546,52 @@
   padding: 5px;
   font-size: 12px;
   line-height: 1;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .markdown-body .csv-data .blob-num {
   text-align: right;
   background: var(--color-canvas-default);
   border: 0;
-  padding: 10px 8px 9px
+  padding: 10px 8px 9px;
 }
 
 .markdown-body .csv-data tr {
-  border-top: 0
+  border-top: 0;
 }
 
 .markdown-body .csv-data th {
   font-weight: var(--base-text-weight-semibold, 600);
   background: var(--color-canvas-subtle);
-  border-top: 0
+  border-top: 0;
 }
 
 .markdown-body [data-footnote-ref]:before {
-  content: "["
+  content: "[";
 }
 
 .markdown-body [data-footnote-ref]:after {
-  content: "]"
+  content: "]";
 }
 
 .markdown-body .footnotes {
   color: var(--color-fg-muted);
   border-top: 1px solid var(--color-border-default);
-  font-size: 12px
+  font-size: 12px;
 }
 
 .markdown-body .footnotes ol {
-  padding-left: 16px
+  padding-left: 16px;
 }
 
 .markdown-body .footnotes ol ul {
   margin-top: 16px;
   padding-left: 16px;
-  display: inline-block
+  display: inline-block;
 }
 
 .markdown-body .footnotes li {
-  position: relative
+  position: relative;
 }
 
 .markdown-body .footnotes li:target:before {
@@ -603,64 +603,64 @@
   top: -8px;
   bottom: -8px;
   left: -24px;
-  right: -8px
+  right: -8px;
 }
 
 .markdown-body .footnotes li:target {
-  color: var(--color-fg-default)
+  color: var(--color-fg-default);
 }
 
 .markdown-body .footnotes .data-footnote-backref g-emoji {
-  font-family: monospace
+  font-family: monospace;
 }
 
 .markdown-body {
   background-color: var(--color-canvas-default);
-  color: var(--color-fg-default)
+  color: var(--color-fg-default);
 }
 
 .markdown-body a {
   color: var(--color-accent-fg);
-  text-decoration: none
+  text-decoration: none;
 }
 
 .markdown-body a:hover {
-  text-decoration: underline
+  text-decoration: underline;
 }
 
-.markdown-body img[align=center] {
-  margin: 0 auto
+.markdown-body img[align="center"] {
+  margin: 0 auto;
 }
 
 .markdown-body iframe {
   background-color: #fff;
   border: 0;
-  margin-bottom: 16px
+  margin-bottom: 16px;
 }
 
 .markdown-body svg.octicon {
-  fill: currentColor
+  fill: currentColor;
 }
 
-.markdown-body .anchor>.octicon {
-  display: inline
+.markdown-body .anchor > .octicon {
+  display: inline;
 }
 
 .markdown-body figcaption {
   text-align: center;
-  padding-top: 2px
+  padding-top: 2px;
 }
 
 .markdown-body .highlight .token.keyword,
 .gfm-highlight .token.keyword {
-  color: var(--color-prettylights-syntax-keyword)
+  color: var(--color-prettylights-syntax-keyword);
 }
 
 .markdown-body .highlight .token.tag .token.class-name,
 .markdown-body .highlight .token.tag .token.script .token.punctuation,
 .gfm-highlight .token.tag .token.class-name,
 .gfm-highlight .token.tag .token.script .token.punctuation {
-  color: var(--color-prettylights-syntax-storage-modifier-import)
+  color: var(--color-prettylights-syntax-storage-modifier-import);
 }
 
 .markdown-body .highlight .token.operator,
@@ -675,54 +675,54 @@
 .gfm-highlight .token.tag .token.punctuation,
 .gfm-highlight .token.tag .token.script .token.script-punctuation,
 .gfm-highlight .token.tag .token.attr-name {
-  color: var(--color-prettylights-syntax-constant)
+  color: var(--color-prettylights-syntax-constant);
 }
 
 .markdown-body .highlight .token.function,
 .gfm-highlight .token.function {
-  color: var(--color-prettylights-syntax-entity)
+  color: var(--color-prettylights-syntax-entity);
 }
 
 .markdown-body .highlight .token.string,
 .gfm-highlight .token.string {
-  color: var(--color-prettylights-syntax-string)
+  color: var(--color-prettylights-syntax-string);
 }
 
 .markdown-body .highlight .token.comment,
 .gfm-highlight .token.comment {
-  color: var(--color-prettylights-syntax-comment)
+  color: var(--color-prettylights-syntax-comment);
 }
 
 .markdown-body .highlight .token.class-name,
 .gfm-highlight .token.class-name {
-  color: var(--color-prettylights-syntax-variable)
+  color: var(--color-prettylights-syntax-variable);
 }
 
 .markdown-body .highlight .token.regex,
 .gfm-highlight .token.regex {
-  color: var(--color-prettylights-syntax-string)
+  color: var(--color-prettylights-syntax-string);
 }
 
 .markdown-body .highlight .token.regex .regex-delimiter,
 .gfm-highlight .token.regex .regex-delimiter {
-  color: var(--color-prettylights-syntax-constant)
+  color: var(--color-prettylights-syntax-constant);
 }
 
 .markdown-body .highlight .token.tag .token.tag,
 .markdown-body .highlight .token.property,
 .gfm-highlight .token.tag .token.tag,
 .gfm-highlight .token.property {
-  color: var(--color-prettylights-syntax-entity-tag)
+  color: var(--color-prettylights-syntax-entity-tag);
 }
 
 .markdown-body .highlight .token.deleted,
 .gfm-highlight .token.deleted {
   color: var(--color-prettylights-syntax-markup-deleted-text);
-  background-color: var(--color-prettylights-syntax-markup-deleted-bg)
+  background-color: var(--color-prettylights-syntax-markup-deleted-bg);
 }
 
 .markdown-body .highlight .token.inserted,
 .gfm-highlight .token.inserted {
   color: var(--color-prettylights-syntax-markup-inserted-text);
-  background-color: var(--color-prettylights-syntax-markup-inserted-bg)
+  background-color: var(--color-prettylights-syntax-markup-inserted-bg);
 }

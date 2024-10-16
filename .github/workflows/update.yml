@@ -31,7 +31,7 @@ jobs:
           branch: updates
           author: GitHub <noreply@github.com>
           delete-branch: true
-    
+
       - name: Retrieve commit SHA
         id: commit
         run: |

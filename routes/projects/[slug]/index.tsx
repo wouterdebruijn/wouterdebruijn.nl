@@ -3,7 +3,8 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { render, Renderer } from "@deno/gfm";
 import { GenericContainer } from "../../../components/GenericContainer.tsx";
 import { SlopedContainer } from "../../../components/SlopedContainer.tsx";
-import { loadProject, Project } from "../../../utils/projects.ts";
+import { loadProject } from "../../../utils/projects.ts";
+import type { Project } from "../../../utils/projects.ts";
 
 class ExtendedRenderer extends Renderer {
   image(src: string, _title: string | null, alt: string | null): string {
