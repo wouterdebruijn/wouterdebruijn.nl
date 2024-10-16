@@ -1,6 +1,14 @@
 import { JSX } from "preact/jsx-runtime";
 
-export function SlopedContainer(props: JSX.HTMLAttributes<HTMLDivElement>) {
+interface SlopedContainerProps extends JSX.HTMLAttributes<HTMLDivElement> {
+  bottomSlope?: boolean;
+}
+
+export function SlopedContainer(
+  { bottomSlope, ...props }: SlopedContainerProps = {
+    bottomSlope: true,
+  },
+) {
   return (
     <div
       {...props}
@@ -21,16 +29,17 @@ export function SlopedContainer(props: JSX.HTMLAttributes<HTMLDivElement>) {
         {props.children}
       </div>
 
-      {/* Slanted border */}
-      <div class="absolute bottom-0 left-0 right-0 h-10 bg-background">
-        <svg
-          class="w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <polygon points="0,100 100,0 100,100" fill="#1AE0BD" />
-        </svg>
-      </div>
+      {bottomSlope && (
+        <div class="absolute bottom-0 left-0 right-0 h-10 bg-background">
+          <svg
+            class="w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <polygon points="0,100 100,0 100,100" fill="#1AE0BD" />
+          </svg>
+        </div>
+      )}
     </div>
   );
 }

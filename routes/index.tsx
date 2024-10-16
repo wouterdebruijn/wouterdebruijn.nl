@@ -1,5 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
 import { About } from "../components/Home/About.tsx";
+import { Contact } from "../components/Home/Contact.tsx";
 import Experience from "../components/Home/Experience.tsx";
 import Projects from "../components/Home/Projects.tsx";
 import Header from "../islands/Header.tsx";
@@ -31,6 +32,8 @@ export default function Home({ data }: PageProps<ProjectThumbnail[]>) {
       <Experience />
 
       <Projects projects={data} />
+
+      <Contact />
     </>
   );
 }
