@@ -7,20 +7,19 @@ import { loadProject } from "../../../utils/projects.ts";
 import type { Project } from "../../../utils/projects.ts";
 
 class ExtendedRenderer extends Renderer {
-  image(src: string, _title: string | null, alt: string | null): string {
+  override image(
+    src: string,
+    _title: string | null,
+    alt: string | null,
+  ): string {
     // Render the GenericImage component using preact/jsx-runtime
     return `
-      <div class="relative w-full h-full">
       <img
-        class="w-full h-full object-cover"
         src="${src}"
         loading="lazy"
         decoding="async"
-        width="100%"
-        height="100%"
         alt="${alt}"
       />
-    </div>
     `;
   }
 }
