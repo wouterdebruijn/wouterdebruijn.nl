@@ -32,7 +32,7 @@ export async function loadProject(slug: string): Promise<Project> {
       `./data/projects/${slug}/${slug}.md`,
     );
 
-    const { body, attrs } = extract(content);
+    const { body, attrs } = extractYaml<ProjectAttributes>(content);
 
     const title = attrs.title as string;
     const description = attrs.description as string;
@@ -40,6 +40,7 @@ export async function loadProject(slug: string): Promise<Project> {
     const cover = attrs.cover as string;
     const created = new Date(attrs.created as string);
     const updated = new Date(attrs.updated as string);
+    const published = attrs.published as boolean;
 
     return {
       title,
@@ -50,6 +51,7 @@ export async function loadProject(slug: string): Promise<Project> {
       content: body,
       created,
       updated,
+      published,
     };
   } catch (error) {
     console.error(error);
