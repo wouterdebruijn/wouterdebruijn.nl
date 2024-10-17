@@ -12,7 +12,7 @@ export function SlopedContainer(
   return (
     <div
       {...props}
-      class="bg-background relative py-24 flex justify-center items-center"
+      class="bg-background relative py-16 flex justify-center items-center"
     >
       {/* Slanted border */}
       <div class="absolute top-0 left-0 right-0 h-10 bg-background">
