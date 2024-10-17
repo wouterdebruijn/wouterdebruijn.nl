@@ -3,18 +3,28 @@ import {
   IMagickImage,
   initialize,
   MagickFormat,
-} from "https://deno.land/x/imagemagick_deno@0.0.26/mod.ts";
+} from "https://deno.land/x/imagemagick_deno@0.0.31/mod.ts";
 
-const imgPath = Deno.args[0];
+const projectName = Deno.args[0];
+const imgPath = Deno.args[1];
+const imageName = Deno.args[2];
+const rotateArg = Deno.args[3];
 
-const imageName = imgPath.split("/").pop();
-const folderPath = imgPath.split("/").slice(0, -1).join("/");
+const rotate = rotateArg ? !!rotateArg : false;
+
 const bareName = imageName.split(".")[0];
 
 if (!imgPath) {
   console.error("Please provide an image path");
   Deno.exit(1);
 }
+
+if (!projectName) {
+  console.error("Please provide a project name");
+  Deno.exit(1);
+}
+
+const projectPath = `./data/projects/${projectName}`;
 
 await initialize(); // make sure to initialize first!
 
@@ -26,17 +36,21 @@ await ImageMagick.read(data, async (img: IMagickImage) => {
   // Resize to length of 500 preserving aspect ratio
   img.resize(800, 800);
 
+  if (rotate) {
+    img.rotate(90);
+  }
+
   await img.write(
-    MagickFormat.Webp,
+    MagickFormat.WebP,
     (data: Uint8Array) =>
-      Deno.writeFile(`${folderPath}/${bareName}.webp`, data),
+      Deno.writeFile(`${projectPath}/${bareName}.webp`, data),
   );
 
   img.resize(100, 100);
 
   await img.write(
-    MagickFormat.Webp,
+    MagickFormat.WebP,
     (data: Uint8Array) =>
-      Deno.writeFile(`${folderPath}/${bareName}-min.webp`, data),
+      Deno.writeFile(`${projectPath}/${bareName}-min.webp`, data),
   );
 });
