@@ -69,33 +69,33 @@ export default function Project({ data, url }: PageProps<Project>) {
         </div>
       </GenericContainer>
 
-      <SlopedContainer>
-        <article
-          data-color-mode="dark"
-          data-dark-theme="dark"
-          class="markdown-body rounded-md"
-          dangerouslySetInnerHTML={{
-            __html: render(data.content, {
-              mediaBaseUrl: `${url}/`,
-              renderer: new ExtendedRenderer(),
-            }),
-          }}
-        />
-        <div class="mt-4 text-right text-gray-300">
-          <p class="text-xs m-0">
-            Created: {data.created.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
-          <p class="text-xs m-0">
-            Last edit: {data.updated.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </p>
+      <SlopedContainer bottomSlope={false}>
+        <div class="lg:mx-32 md:mx-8">
+          <article
+            class="markdown-body"
+            dangerouslySetInnerHTML={{
+              __html: render(data.content, {
+                mediaBaseUrl: `${url}/`,
+                renderer: new ExtendedRenderer(),
+              }),
+            }}
+          />
+          <div class="mt-4 text-right text-gray-300">
+            <p class="text-xs m-0">
+              Created: {data.created.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+            <p class="text-xs m-0">
+              Last edit: {data.updated.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </p>
+          </div>
         </div>
       </SlopedContainer>
     </div>
