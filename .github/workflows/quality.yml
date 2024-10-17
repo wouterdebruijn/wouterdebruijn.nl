@@ -15,7 +15,7 @@ jobs:
       - name: Setup latest Deno version
         uses: denolib/setup-deno@v2
         with:
-          deno-version: v1.x
+          deno-version: v2.x
 
       - name: Run Deno fmt
         run: deno fmt --check
