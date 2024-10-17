@@ -31,6 +31,10 @@
     @apply font-roboto mb-4;
   }
 
+  ul {
+    @apply font-roboto list-disc ml-4;
+  }
+
   img {
     @apply rounded-sm shadow-md my-4;
   }
