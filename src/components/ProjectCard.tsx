@@ -1,5 +1,6 @@
 'use client';
 import { FC } from 'react';
+import { getImageProps } from 'next/image'
 
 interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
     title: string;
@@ -8,14 +9,28 @@ interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
     slug: string;
 }
 
+function getBackgroundImage(srcSet = '') {
+    const imageSet = srcSet
+      .split(', ')
+      .map((str) => {
+        const [url, dpi] = str.split(' ')
+        return `url("${url}") ${dpi}`
+      })
+      .join(', ')
+    return `image-set(${imageSet})`
+  }
+
 const ProjectCard: FC<ProjectCardProps> = ({ title, description, cover, slug, ...props }) => {
+    const { props: { srcSet } } = getImageProps({ alt: '', width: 512, height: 512, src: `/projects/${slug}/${cover}` })
+    const backgroundImage = getBackgroundImage(srcSet)
+
     return (
         <a href={`/projects/${slug}`}>
             <div
                 id={slug}
                 className="bg-cover bg-center w-full aspect-video text-white text-ellipsis overflow-hidden shadow-lg"
                 style={{
-                    backgroundImage: `url(/projects/${slug}/${cover})`,
+                    backgroundImage
                 }}
                 {...props}
             >

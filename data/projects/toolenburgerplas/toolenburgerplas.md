@@ -68,7 +68,7 @@ for internal enclosure temperature monitoring. The device needed a waterproof
 enclosure to protect the electronics while allowing part of it (e.g., the
 antenna) to remain above water for connectivity.
 
-### Power Source and Efficiency
+## Power Source and Efficiency
 
 To ensure the device could operate for extended periods, we used four 18650
 batteries in parallel, charged by a wireless charging coil inside the enclosure.
@@ -76,7 +76,7 @@ To conserve power, we programmed the Arduino to "sleep" most of the time, only
 waking up hourly to take measurements and send data. This approach worked well,
 allowing the device to last over a month on a single charge.
 
-### Software and Website
+## Software and Website
 
 While I focused on the electronics and code, [Sjors](https://sjorsvanholst.nl)
 developed the [website](https://toolenburgerplas.nl/) to display the temperature
@@ -87,7 +87,7 @@ graph illustrating temperature trends over time. We stored the data on
 
 ![Getting the electronics together](hardware.webp)
 
-### API Challenges
+## API Challenges
 
 We encountered challenges with API security because the Arduino had limited
 support for SSL certificates. To solve this, I set up an Nginx reverse proxy on
