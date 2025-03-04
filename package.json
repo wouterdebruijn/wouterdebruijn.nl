@@ -12,6 +12,7 @@
     "front-matter": "^4.0.2",
     "next": "15.2.1",
     "next-mdx-remote": "^5.0.0",
+    "pocketbase": "^0.25.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
