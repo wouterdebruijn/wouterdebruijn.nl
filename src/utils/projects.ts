@@ -30,7 +30,7 @@ export type ProjectThumbnail = Omit<Project, "content">;
 export async function loadProject(slug: string): Promise<Project> {
   try {
     const file = await readFile(
-      `src/data/projects/${slug}/${slug}.md`,
+      `data/projects/${slug}/${slug}.md`,
     );
 
     
@@ -65,12 +65,12 @@ export async function listProjects(): Promise<
   Omit<Project, "content">[]
 > {
   try {
-    const folders = await readdir("src/data/projects");
+    const folders = await readdir("data/projects");
     const projects: Omit<Project, "content">[] = [];
 
     for await (const folder of folders) {
       const file = await readFile(
-        `src/data/projects/${folder}/${folder}.md`,
+        `data/projects/${folder}/${folder}.md`,
       );
 
       const content = await file.toString("utf-8");
@@ -114,7 +114,7 @@ export async function loadProjectImage(
 ): Promise<Uint8Array> {
   try {
     const imageData = await readFile(
-      `src/data/projects/${slug}/${image}`,
+      `data/projects/${slug}/${image}`,
     );
 
     return imageData;
