@@ -3,11 +3,12 @@ import { Teko, Roboto } from "next/font/google";
 import "./globals.css";
 
 const teko = Teko({
-  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-teko",
+  subsets: ["latin-ext"],
 });
 const roboto = Roboto({
   variable: "--font-roboto",
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
