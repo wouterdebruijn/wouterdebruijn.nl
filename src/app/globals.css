@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+--color-primary: #1AE0BD;
+--color-secondary: #1A1A1A;
+--color-tertiary: #2D2D2D;
+--color-background: #222222;
+--font-teko: var(--font-teko);
+--font-roboto: var(--font-roboto);
+}
+
+body {
+    font-family: var(--font-teko);
+}
