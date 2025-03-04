@@ -3,7 +3,6 @@ import SlopedContainer from '@/components/SlopedContainer'
 import { compileMDX } from 'next-mdx-remote/rsc'
 import { readFile } from "node:fs/promises"
 import { Project } from '@/utils/projects'
-import remarkGfm from 'remark-gfm'
 
 import { ComponentPropsWithoutRef } from 'react'
 import ProjectHeader from '@/components/Projects/ProjectHeader'
@@ -35,7 +34,6 @@ export default async function ProjectPage({
         source: file,
         options: { parseFrontmatter: true, mdxOptions: {
             baseUrl: `/projects/${project}/`,
-            remarkPlugins: [remarkGfm]
         } },
         components,
     })
