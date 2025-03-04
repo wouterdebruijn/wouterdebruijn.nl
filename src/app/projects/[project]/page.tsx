@@ -8,6 +8,27 @@ import { ComponentPropsWithoutRef } from 'react'
 import ProjectHeader from '@/components/Projects/ProjectHeader'
 import ProjectImage from '@/components/Projects/ProjectImage'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export async function generateMetadata({ params }: {
+    params: Promise<{ project: string }>
+}): Promise<Metadata> {
+    const project = (await params).project
+    const file = await readFile(`data/projects/${project}/${project}.md`, "utf-8")
+
+    const { frontmatter } = await compileMDX<Project>({
+        source: file,
+        options: { parseFrontmatter: true },
+    })
+
+    return {
+        title: frontmatter.title,
+        description: frontmatter.description,
+        authors: [{ name: "Wouter de Bruijn" }],
+        keywords: frontmatter.tags,
+        robots: "index, follow",
+    }
+}
 
 export default async function ProjectPage({
     params,
@@ -32,9 +53,11 @@ export default async function ProjectPage({
 
     const { content, frontmatter } = await compileMDX<Project>({
         source: file,
-        options: { parseFrontmatter: true, mdxOptions: {
-            baseUrl: `/projects/${project}/`,
-        } },
+        options: {
+            parseFrontmatter: true, mdxOptions: {
+                baseUrl: `/projects/${project}/`,
+            }
+        },
         components,
     })
 
