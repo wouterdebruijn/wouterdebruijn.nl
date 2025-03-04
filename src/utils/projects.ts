@@ -1,5 +1,5 @@
 import fm from "front-matter";
-import { readdir } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 
 export interface ProjectAttributes {
   title: string;
@@ -29,12 +29,12 @@ export type ProjectThumbnail = Omit<Project, "content">;
 
 export async function loadProject(slug: string): Promise<Project> {
   try {
-    const file = await Bun.file(
+    const file = await readFile(
       `src/data/projects/${slug}/${slug}.md`,
     );
 
     
-    const { body, attributes } = fm<ProjectAttributes>(await file.text());
+    const { body, attributes } = fm<ProjectAttributes>(await file.toString("utf-8"));
 
     const title = attributes.title as string;
     const description = attributes.description as string;
@@ -69,11 +69,11 @@ export async function listProjects(): Promise<
     const projects: Omit<Project, "content">[] = [];
 
     for await (const folder of folders) {
-      const file = await Bun.file(
+      const file = await readFile(
         `src/data/projects/${folder}/${folder}.md`,
       );
 
-      const content = await file.text();
+      const content = await file.toString("utf-8");
 
       const { attributes } = fm<ProjectAttributes>(content);
 
@@ -113,12 +113,11 @@ export async function loadProjectImage(
   image: string,
 ): Promise<Uint8Array> {
   try {
-    const imageData = await Bun.file(
+    const imageData = await readFile(
       `src/data/projects/${slug}/${image}`,
     );
 
-    const data = await imageData.bytes();
-    return data;
+    return imageData;
   } catch (error) {
     console.error(error);
     throw new Error(`Could not load image "${slug}"`);

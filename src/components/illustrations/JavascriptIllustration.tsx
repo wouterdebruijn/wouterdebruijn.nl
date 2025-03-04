@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { SVGProps } from 'react';
 
-const JavascriptIllustration: React.FC = (props) => {
+const JavascriptIllustration: React.FC<SVGProps<SVGSVGElement>> = (props) => {
     return (
       <svg
       width="100%"
