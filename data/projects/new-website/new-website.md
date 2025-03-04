@@ -77,8 +77,6 @@ illustrations for personal and commercial use. I am by no means a designer,
 especially not for illustrations, so I am very happy that was able to use these
 illustrations.
 
-<!-- Figma design image -->
-
 ![Screenshot of Figma with the website design](figma-design.webp)
 
 ## Purpose
