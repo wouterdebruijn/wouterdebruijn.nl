@@ -16,8 +16,6 @@ export const metadata: Metadata = {
   description: "Personal website of Wouter de Bruijn",
   authors : [{name: "Wouter de Bruijn"}],
   keywords: ["Wouter de Bruijn", "Personal website", "Wouter", "de Bruijn"],
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#000000",
   robots: "index, follow",
 };
 
