@@ -10,7 +10,7 @@ const Contact = () => {
                     <li>
                         You can contact me by sending an email to{" "}
                         <a className="text-tertiary" href="mailto:contact@wouterdebruijn.nl">
-                            contact@wouterdebruijn.nl
+                            contact@rl.hedium.nl
                         </a>.
                     </li>
                 </ul>
