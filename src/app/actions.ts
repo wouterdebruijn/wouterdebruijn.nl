@@ -5,12 +5,14 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { ClientResponseError } from "pocketbase";
 
+
+
 async function authenticate(username: string, password: string) {
     try {
         const pb = await initPocketBase();
         const cookieStore = await cookies();
         await pb.collection("users").authWithPassword(username, password);
-        cookieStore.set("pb_auth", pb.authStore.token);
+        cookieStore.set("pb_auth", JSON.stringify({token: pb.authStore.token, record: pb.authStore.record}));
     } catch (e) {
         if (e instanceof ClientResponseError) {
             return [false, e.response.message];
