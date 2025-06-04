@@ -7,8 +7,10 @@ import { Project } from '@/utils/projects'
 import { ComponentPropsWithoutRef } from 'react'
 import ProjectHeader from '@/components/Projects/ProjectHeader'
 import ProjectImage from '@/components/Projects/ProjectImage'
-import Link from 'next/link'
 import { Metadata } from 'next'
+import { initPocketBase } from '@/lib/pocketbase'
+import ProjectComment from '@/components/Projects/ProjectComment'
+import ProjectTitle from '@/components/Projects/ProjectTitle'
 
 export async function generateMetadata({ params }: {
     params: Promise<{ project: string }>
@@ -67,24 +69,25 @@ export default async function ProjectPage({
         updated: new Date(frontmatter.updated),
     }
 
+    const pb = await initPocketBase();
+    const projectsList = await pb.collection('projects').getList(1, 1, { filter: `slug = "${project}"`, expand: 'comments_via_project',  });
+
+    const projectObject = projectsList.items[0];
+    const comments = projectObject.expand?.comments_via_project;
+
+    const commentsWithReplies = comments.map((c) => {
+        c.replies = comments.filter((r) => r.reply_to === c.id);
+        return c;
+    });
+
+    const commentsFiltered = commentsWithReplies.filter((c) => !c.reply_to);
+
     return (
         <div>
-            <GenericContainer className="bg-primary pt-14 pb-4">
-                <div className="flex flex-col text-right">
-                    <div className="text-4xl">
-                        <Link href="/">Wouter de Bruijn</Link>
-                    </div>
-                    <div>
-                        <h1 className="text-5xl text-white">{data.title}</h1>
-                        <p className="hidden text-xl max-w-3xl ml-auto lg:block">
-                            {data.description}
-                        </p>
-                    </div>
-                </div>
-            </GenericContainer>
+            <ProjectTitle data={data} />
 
             <SlopedContainer bottomSlope={false}>
-                <div className="lg:mx-32 md:mx-8">
+                <div>
                     <article
                         className="text-white"
                     >
@@ -108,6 +111,12 @@ export default async function ProjectPage({
                     </div>
                 </div>
             </SlopedContainer>
+
+            <GenericContainer className="bg-primary py-8">
+                {
+                    commentsFiltered.map((c) => <ProjectComment key={c.id} comment={c} replies={c.replies} />)
+                }
+            </GenericContainer>
         </div>
     )
 }
