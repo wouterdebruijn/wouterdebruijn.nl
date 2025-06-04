@@ -1,14 +1,15 @@
 import React from 'react';
 
 interface SlopedContainerProps {
-    children: React.ReactNode;
+    children?: React.ReactNode;
     bottomSlope?: boolean;
+    className?: string;
 }
 
-const SlopedContainer: React.FC<SlopedContainerProps> = ({ children, bottomSlope }) => {
+const SlopedContainer: React.FC<SlopedContainerProps> = ({ children, bottomSlope, className }) => {
     return (
         <div
-        className="bg-background relative py-16 flex justify-center items-center"
+        className={`bg-background relative py-16 flex justify-center items-center ${className}`}
       >
         {/* Slanted border */}
         <div className="absolute top-0 left-0 right-0 h-10 bg-background">
