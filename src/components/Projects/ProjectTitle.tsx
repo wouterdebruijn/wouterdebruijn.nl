@@ -1,10 +1,8 @@
 "use client";
 
 import React from "react";
-import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import GenericContainer from "../GenericContainer";
 import Link from "next/link";
-import SlopedContainer from "../SlopedContainer";
 
 interface ProjectTitleProps {
     data: {
