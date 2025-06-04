@@ -12,6 +12,8 @@ import { initPocketBase } from '@/lib/pocketbase'
 import ProjectComment from '@/components/Projects/ProjectComment'
 import ProjectTitle from '@/components/Projects/ProjectTitle'
 
+import { PbComment } from '@/types'
+
 export async function generateMetadata({ params }: {
     params: Promise<{ project: string }>
 }): Promise<Metadata> {
@@ -73,7 +75,7 @@ export default async function ProjectPage({
     const projectsList = await pb.collection('projects').getList(1, 1, { filter: `slug = "${project}"`, expand: 'comments_via_project',  });
 
     const projectObject = projectsList.items[0];
-    const comments = projectObject.expand?.comments_via_project;
+    const comments = projectObject.expand?.comments_via_project as PbComment[]
 
     const commentsWithReplies = comments.map((c) => {
         c.replies = comments.filter((r) => r.reply_to === c.id);

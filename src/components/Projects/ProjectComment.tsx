@@ -1,17 +1,12 @@
-interface Comment {
-    id: string;
-    author: string;
-    content: string;
-    created: Date;
-    updated: Date;
-}
+import { PbComment } from "@/types";
+
 
 interface ProjectCommentProps {
-    comment: Comment;
-    replies?: Comment[];
+    comment: PbComment;
+    replies?: PbComment[];
 }
 
-function CommentReply({comment}: {comment: Comment}) {
+function CommentReply({comment}: {comment: PbComment}) {
     return (
         <div className="mt-2">
             <h1 className="text-xl">@{comment.author}</h1>
