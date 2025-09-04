@@ -29,12 +29,11 @@ export type ProjectThumbnail = Omit<Project, "content">;
 
 export async function loadProject(slug: string): Promise<Project> {
   try {
-    const file = await readFile(
-      `data/projects/${slug}/${slug}.md`,
-    );
+    const file = await readFile(`data/projects/${slug}/${slug}.md`);
 
-    
-    const { body, attributes } = fm<ProjectAttributes>(await file.toString("utf-8"));
+    const { body, attributes } = fm<ProjectAttributes>(
+      await file.toString("utf-8")
+    );
 
     const title = attributes.title as string;
     const description = attributes.description as string;
@@ -61,17 +60,13 @@ export async function loadProject(slug: string): Promise<Project> {
   }
 }
 
-export async function listProjects(): Promise<
-  Omit<Project, "content">[]
-> {
+export async function listProjects(): Promise<Omit<Project, "content">[]> {
   try {
     const folders = await readdir("data/projects");
     const projects: Omit<Project, "content">[] = [];
 
     for await (const folder of folders) {
-      const file = await readFile(
-        `data/projects/${folder}/${folder}.md`,
-      );
+      const file = await readFile(`data/projects/${folder}/${folder}.md`);
 
       const content = await file.toString("utf-8");
 
@@ -110,12 +105,10 @@ export async function listProjects(): Promise<
 
 export async function loadProjectImage(
   slug: string,
-  image: string,
+  image: string
 ): Promise<Uint8Array> {
   try {
-    const imageData = await readFile(
-      `data/projects/${slug}/${image}`,
-    );
+    const imageData = await readFile(`data/projects/${slug}/${image}`);
 
     return imageData;
   } catch (error) {

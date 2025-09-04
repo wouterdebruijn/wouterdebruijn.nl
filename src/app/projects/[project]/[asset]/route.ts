@@ -1,18 +1,23 @@
-import { loadProjectImage } from '../../../../utils/projects';
-import { NextResponse, type NextRequest } from 'next/server'
+import { loadProjectImage } from "../../../../utils/projects";
+import { NextResponse, type NextRequest } from "next/server";
 
-export async function GET(request: NextRequest, {params}: {params: Promise<{project: string, asset: string}>}) {
-    const { project, asset } = await params
+export const dynamic = "force-static";
 
-    if (!project || !asset) {
-        return new NextResponse(null, { status: 404 })
-    }
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ project: string; asset: string }> }
+) {
+  const { project, asset } = await params;
 
-    const imageData = await loadProjectImage(project, asset)
+  if (!project || !asset) {
+    return new NextResponse(null, { status: 404 });
+  }
 
-    return new NextResponse(imageData, {
-        headers: {
-            'Content-Type': 'image/webp',
-        },
-    })
+  const imageData = await loadProjectImage(project, asset);
+
+  return new NextResponse(imageData, {
+    headers: {
+      "Content-Type": "image/webp",
+    },
+  });
 }
