@@ -1,4 +1,4 @@
-import React, { SVGProps } from 'react';
+import React, { SVGProps } from "react";
 
 const MonitorIllustration: React.FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -747,6 +747,6 @@ const MonitorIllustration: React.FC<SVGProps<SVGSVGElement>> = (props) => {
       </g>
     </svg>
   );
-}
+};
 
 export default MonitorIllustration;

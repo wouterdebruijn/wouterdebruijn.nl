@@ -1,8 +1,8 @@
-import React, { SVGProps } from 'react';
+import React, { SVGProps } from "react";
 
 const JavascriptIllustration: React.FC<SVGProps<SVGSVGElement>> = (props) => {
-    return (
-      <svg
+  return (
+    <svg
       width="100%"
       height="100%"
       viewBox="0 0 473 183"
@@ -461,7 +461,7 @@ const JavascriptIllustration: React.FC<SVGProps<SVGSVGElement>> = (props) => {
         fill="#141414"
       />
     </svg>
-    );
+  );
 };
 
 export default JavascriptIllustration;
