@@ -1,5 +1,5 @@
-import { GenericText, SlopedContainer } from "../UI";
-import { MonitorIllustration } from "../Illustrations";
+import { GenericText, SlopedContainer } from "../ui";
+import { MonitorIllustration } from "../illustrations";
 
 const BIRTH_DATE = new Date("2001-08-13");
 const MS_PER_YEAR = 3.15576e10;

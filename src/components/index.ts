@@ -1,9 +1,9 @@
 // Main component exports
-export { default as Header } from "./Header";
+export { default as SiteHeader } from "./site-header";
 
 // Re-export from subdirectories
-export * from "./Auth";
-export * from "./Home";
-export * from "./Illustrations";
-export * from "./Projects";
-export * from "./UI";
+export * from "./auth";
+export * from "./home";
+export * from "./illustrations";
+export * from "./projects";
+export * from "./ui";

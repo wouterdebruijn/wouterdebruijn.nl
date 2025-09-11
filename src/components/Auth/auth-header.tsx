@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/UI";
+import { Button } from "@/components/ui";
 import { auth } from "@/auth";
 
 export default async function AuthHeader() {

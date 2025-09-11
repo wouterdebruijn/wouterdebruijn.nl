@@ -22,7 +22,7 @@ const SUBTITLE_ROTATION_TITLES = [
 
 const SUBTITLE_INTERVAL_MS = 2000;
 
-export default function Header({ className }: HeaderProps) {
+export default function SiteHeader({ className }: HeaderProps) {
   const [subtitle, setSubtitle] = useState<string>("Network engineer");
 
   const setRandomSubtitle = useCallback((currentTitle: string) => {

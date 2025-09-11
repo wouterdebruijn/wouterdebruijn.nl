@@ -1,5 +1,5 @@
-export { default as About } from "./About";
-export { default as Contact } from "./Contact";
-export { default as Experience } from "./Experience";
-export { default as ProjectCard } from "./ProjectCard";
-export { default as Projects } from "./Projects";
+export { default as About } from "./about";
+export { default as Contact } from "./contact";
+export { default as Experience } from "./experience";
+export { default as ProjectCard } from "./project-card";
+export { default as Projects } from "./projects";

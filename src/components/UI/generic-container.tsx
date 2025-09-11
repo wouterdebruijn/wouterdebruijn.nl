@@ -17,3 +17,6 @@ export default function GenericContainer({
     </div>
   );
 }
+
+// Export the interface for TypeScript support
+export type { GenericContainerProps };

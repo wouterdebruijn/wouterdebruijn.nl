@@ -1,6 +1,6 @@
-import { About, Experience, Projects, Contact } from "@/components/Home";
-import { Header } from "@/components";
-import { AuthHeader } from "@/components/Auth";
+import { About, Experience, Projects, Contact } from "@/components/home";
+import { SiteHeader } from "@/components";
+import { AuthHeader } from "@/components/auth";
 import { listProjects } from "@/utils/projects";
 
 export default async function Home() {
@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <div>
-      <Header />
+      <SiteHeader />
       <AuthHeader />
       <About />
       <Experience />
