@@ -1,15 +1,20 @@
+import { ReactNode } from "react";
+
 interface GenericTextProps {
-  children: React.ReactNode;
+  children: ReactNode;
   title: string;
+  className?: string;
 }
 
-const GenericText: React.FC<GenericTextProps> = ({ children, title }) => {
+export default function GenericText({
+  children,
+  title,
+  className,
+}: GenericTextProps) {
   return (
-    <article>
+    <article className={className}>
       <h1 className="text-2xl text-white my-2">{title}</h1>
       {children}
     </article>
   );
-};
-
-export default GenericText;
+}

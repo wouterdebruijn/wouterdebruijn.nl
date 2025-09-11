@@ -1,20 +1,30 @@
-interface ButtonProps {
+import { ButtonHTMLAttributes } from "react";
+
+type ButtonVariant = "primary" | "secondary" | "white";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
-  onClick?: () => void;
-  style: "primary" | "secondary" | "white";
+  variant?: ButtonVariant;
 }
 
-export default function Button({ title, onClick, style }: ButtonProps) {
-  const styles = {
-    primary: "bg-primary",
-    secondary: "bg-secondary",
-    white: "bg-white/40 rounded-full text-black hover:bg-white/60",
-  };
+const BUTTON_STYLES: Record<ButtonVariant, string> = {
+  primary: "bg-primary",
+  secondary: "bg-secondary",
+  white: "bg-white/40 rounded-full text-black hover:bg-white/60",
+} as const;
+
+export default function Button({
+  title,
+  variant = "primary",
+  className,
+  ...props
+}: ButtonProps) {
+  const variantStyles = BUTTON_STYLES[variant];
 
   return (
     <button
-      className={`${styles[style]} min-w-23 px-6 py-1 text-md rounded cursor-pointer shadow transform transition-transform duration-200 hover:scale-105`}
-      onClick={onClick}
+      className={`${variantStyles} min-w-23 px-6 py-1 text-md rounded cursor-pointer shadow transform transition-transform duration-200 hover:scale-105 ${className || ""}`}
+      {...props}
     >
       {title}
     </button>
