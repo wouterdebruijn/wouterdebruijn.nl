@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "white";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface GenericButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   variant?: ButtonVariant;
 }
@@ -13,12 +13,12 @@ const BUTTON_STYLES: Record<ButtonVariant, string> = {
   white: "bg-white/40 rounded-full text-black hover:bg-white/60",
 } as const;
 
-export default function Button({
+export default function GenericButton({
   title,
   variant = "primary",
   className,
   ...props
-}: ButtonProps) {
+}: GenericButtonProps) {
   const variantStyles = BUTTON_STYLES[variant];
 
   return (

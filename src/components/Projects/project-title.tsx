@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import GenericContainer from "../UI/GenericContainer";
+import GenericContainer from "../ui/generic-container";
 import Link from "next/link";
 
 interface ProjectTitleProps {

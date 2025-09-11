@@ -1,10 +1,10 @@
-import { GenericContainer, SlopedContainer } from "@/components/UI";
+import { GenericContainer, SlopedContainer } from "@/components/ui";
 import {
   ProjectHeader,
   ProjectImage,
   ProjectComment,
   ProjectTitle,
-} from "@/components/Projects";
+} from "@/components/projects";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { readFile } from "node:fs/promises";
 import { Project } from "@/utils/projects";

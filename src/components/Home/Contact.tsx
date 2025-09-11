@@ -1,5 +1,5 @@
-import GenericText from "../UI/GenericText";
-import SlopedContainer from "../UI/SlopedContainer";
+import GenericText from "../ui/generic-text";
+import SlopedContainer from "../ui/sloped-container";
 
 const Contact = () => {
   return (

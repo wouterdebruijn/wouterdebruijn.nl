@@ -1,7 +1,7 @@
-import ProjectCard from "@/components/Home/ProjectCard";
+import ProjectCard from "./project-card";
 import { ProjectThumbnail } from "../../utils/projects";
-import GenericContainer from "../UI/GenericContainer";
-import GenericText from "../UI/GenericText";
+import GenericContainer from "../ui/generic-container";
+import GenericText from "../ui/generic-text";
 
 interface ProjectsProps {
   projects: ProjectThumbnail[];

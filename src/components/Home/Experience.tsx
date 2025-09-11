@@ -1,6 +1,6 @@
-import GenericContainer from "../UI/GenericContainer";
-import GenericText from "../UI/GenericText";
-import JavascriptIllustration from "../Illustrations/JavascriptIllustration";
+import GenericContainer from "../ui/generic-container";
+import GenericText from "../ui/generic-text";
+import JavascriptIllustration from "../illustrations/javascript-illustration";
 
 const Experience = () => {
   return (
