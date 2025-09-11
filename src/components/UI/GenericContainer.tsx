@@ -1,19 +1,19 @@
-import React from "react";
+import { ReactNode } from "react";
 
 interface GenericContainerProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-const GenericContainer: React.FC<GenericContainerProps> = ({
+export default function GenericContainer({
   children,
   className,
-}) => {
+}: GenericContainerProps) {
   return (
-    <div className={`py-16 flex justify-center items-center ${className}`}>
+    <div
+      className={`py-16 flex justify-center items-center ${className || ""}`}
+    >
       <div className="container px-8">{children}</div>
     </div>
   );
-};
-
-export default GenericContainer;
+}

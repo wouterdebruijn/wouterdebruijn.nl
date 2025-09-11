@@ -106,11 +106,14 @@ export async function listProjects(): Promise<Omit<Project, "content">[]> {
 export async function loadProjectImage(
   slug: string,
   image: string
-): Promise<Uint8Array> {
+): Promise<ArrayBuffer> {
   try {
     const imageData = await readFile(`data/projects/${slug}/${image}`);
 
-    return imageData;
+    return imageData.buffer.slice(
+      imageData.byteOffset,
+      imageData.byteOffset + imageData.byteLength
+    ) as ArrayBuffer;
   } catch (error) {
     console.error(error);
     throw new Error(`Could not load image "${slug}"`);

@@ -1,16 +1,15 @@
-import GenericContainer from "@/components/UI/GenericContainer";
-import SlopedContainer from "@/components/UI/SlopedContainer";
+import { GenericContainer, SlopedContainer } from "@/components/UI";
+import {
+  ProjectHeader,
+  ProjectImage,
+  ProjectComment,
+  ProjectTitle,
+} from "@/components/Projects";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { readFile } from "node:fs/promises";
 import { Project } from "@/utils/projects";
-
 import { ComponentPropsWithoutRef } from "react";
-import ProjectHeader from "@/components/Projects/ProjectHeader";
-import ProjectImage from "@/components/Projects/ProjectImage";
 import { Metadata } from "next";
-import ProjectComment from "@/components/Projects/ProjectComment";
-import ProjectTitle from "@/components/Projects/ProjectTitle";
-
 import { getPocketBase } from "@/lib/pocketbase";
 import { auth } from "@/auth";
 import { Comment } from "@/types/collections";

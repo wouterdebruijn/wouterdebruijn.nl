@@ -1,13 +1,17 @@
-import GenericText from "../UI/GenericText";
-import MonitorIllustration from "../Illustrations/MonitorIllustration";
-import SlopedContainer from "../UI/SlopedContainer";
+import { GenericText, SlopedContainer } from "../UI";
+import { MonitorIllustration } from "../Illustrations";
 
-const About = () => {
-  const birthDate = new Date("2001-08-13");
+const BIRTH_DATE = new Date("2001-08-13");
+const MS_PER_YEAR = 3.15576e10;
 
-  const age = Math.floor(
-    (new Date().getTime() - birthDate.getTime()) / 3.15576e10,
+function calculateAge(): number {
+  return Math.floor(
+    (new Date().getTime() - BIRTH_DATE.getTime()) / MS_PER_YEAR
   );
+}
+
+export default function About() {
+  const age = calculateAge();
 
   return (
     <SlopedContainer>
@@ -35,6 +39,4 @@ const About = () => {
       </div>
     </SlopedContainer>
   );
-};
-
-export default About;
+}
