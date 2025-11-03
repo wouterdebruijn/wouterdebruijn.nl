@@ -8,3 +8,21 @@ export type Comment = {
   created: Date;
   updated: Date;
 };
+
+export enum ReactionType {
+  LIKE = "👍",
+  LOVE = "❤️",
+  THINKING = "🤔",
+  EYES = "👀",
+  DISLIKE = "👎",
+  BORING = "😴",
+}
+
+export type Reaction = {
+  id: string;
+  project: string;
+  reaction: ReactionType;
+  author: string;
+  created: Date;
+  updated: Date;
+};
