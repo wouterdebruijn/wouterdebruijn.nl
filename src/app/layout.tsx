@@ -3,6 +3,7 @@ import { Teko, Roboto } from "next/font/google";
 import "./globals.css";
 import AuthSessionProvider from "@/contexts/AuthSessionProvider";
 import { auth } from "@/auth";
+import PlausibleProvider from "next-plausible/dist/lib/PlausibleProvider";
 
 const teko = Teko({
   variable: "--font-teko",
@@ -30,9 +31,11 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${teko.variable} ${roboto.variable} antialiased`}>
-        <AuthSessionProvider session={session}>{children}</AuthSessionProvider>
-      </body>
+      <PlausibleProvider>
+        <body className={`${teko.variable} ${roboto.variable} antialiased`}>
+          <AuthSessionProvider session={session}>{children}</AuthSessionProvider>
+        </body>
+      </PlausibleProvider>
     </html>
   );
 }
