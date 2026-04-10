@@ -41,7 +41,7 @@ RUN groupadd --system --gid 1001 nodejs && \
     useradd --system --uid 1001 --no-log-init -g nodejs nextjs
 
 # Public folder is empty
-# COPY --from=builder /app/public ./public
+COPY --from=builder /app/public ./public
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
