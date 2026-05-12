@@ -1,9 +1,12 @@
 import { GenericContainer, SlopedContainer } from "@/components/ui";
 import {
+  MediaStack,
   ProjectHeader,
   ProjectImage,
   ProjectComment,
+  ProjectSection,
   ProjectTitle,
+  ProjectVideo,
 } from "@/components/projects";
 import { compileMDX } from "next-mdx-remote/rsc";
 import { readFile } from "node:fs/promises";
@@ -72,15 +75,30 @@ export default async function ProjectPage({
     li: (props: ComponentPropsWithoutRef<"li">) => (
       <li className="font-roboto" {...props} />
     ),
-    p: (props: ComponentPropsWithoutRef<"p">) => (
-      <p className="mt-2 font-roboto" {...props} />
-    ),
+    p: ({ children, ...props }: ComponentPropsWithoutRef<"p">) => {
+      const hasBlock = Array.isArray(children)
+        ? children.some((c) => typeof c === "object")
+        : typeof children === "object";
+      return hasBlock ? (
+        <div className="mt-2 font-roboto">{children}</div>
+      ) : (
+        <p className="mt-2 font-roboto" {...props}>{children}</p>
+      );
+    },
     a: (props: ComponentPropsWithoutRef<"a">) => (
       <a className="text-secondary hover:underline" {...props} />
     ),
     img: (props: ComponentPropsWithoutRef<"img">) => (
       <ProjectImage src={`/projects/${project}/${props.src}`} />
     ),
+    Image: ({ src }: { src: string }) => (
+      <ProjectImage src={`/projects/${project}/${src}`} />
+    ),
+    Video: ({ src }: { src: string }) => (
+      <ProjectVideo src={`/projects/${project}/${src}`} />
+    ),
+    MediaStack,
+    Section: ProjectSection,
   };
 
   const { content, frontmatter } = await compileMDX<Project>({
