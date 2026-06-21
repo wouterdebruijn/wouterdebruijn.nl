@@ -94,8 +94,8 @@ export default async function ProjectPage({
     Image: ({ src }: { src: string }) => (
       <ProjectImage src={`/projects/${project}/${src}`} />
     ),
-    Video: ({ src }: { src: string }) => (
-      <ProjectVideo src={`/projects/${project}/${src}`} />
+    Video: ({ src, muted, controls, autoPlay }: { src: string, muted?: boolean, controls?: boolean, autoPlay?: boolean }) => (
+      <ProjectVideo src={`/projects/${project}/${src}`} muted={muted} controls={controls} autoPlay={autoPlay} />
     ),
     MediaStack,
     Section: ProjectSection,

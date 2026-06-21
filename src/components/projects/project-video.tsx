@@ -1,15 +1,20 @@
 interface ProjectVideoProps {
   src: string;
+  muted?: boolean;
+  controls?: boolean;
+  autoPlay?: boolean;
 }
 
-export default function ProjectVideo({ src }: ProjectVideoProps) {
+export default function ProjectVideo({ src, muted = true, controls = false, autoPlay = true }: ProjectVideoProps) {
   return (
     <figure className="block m-0 my-4 w-full sm:w-72 md:w-80 lg:w-96">
       <div className="relative aspect-[4/3] border border-white/10 rounded-sm overflow-hidden shadow-md">
         <video
-          autoPlay
+          autoPlay={autoPlay}
           loop
-          muted
+          muted={muted}
+          controls={controls}
+
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
