@@ -8,11 +8,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+	baseDirectory: __dirname,
 });
 
-const eslintConfig = [...nextCoreWebVitals, ...compat.extends("prettier"), ...nextTypescript, {
-  ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"]
-}];
+const eslintConfig = [
+	...nextCoreWebVitals,
+	...compat.extends("prettier"),
+	...nextTypescript,
+	{
+		ignores: [
+			"node_modules/**",
+			".next/**",
+			"out/**",
+			"build/**",
+			"next-env.d.ts",
+		],
+	},
+];
 
 export default eslintConfig;

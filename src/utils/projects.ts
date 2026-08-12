@@ -2,120 +2,120 @@ import fm from "front-matter";
 import { readdir, readFile } from "node:fs/promises";
 
 export interface ProjectAttributes {
-  title: string;
-  slug: string;
-  description: string;
-  tags: string[];
-  cover: string;
-  content: string;
-  created: string;
-  updated: string;
-  published: boolean;
+	title: string;
+	slug: string;
+	description: string;
+	tags: string[];
+	cover: string;
+	content: string;
+	created: string;
+	updated: string;
+	published: boolean;
 }
 
 export interface Project {
-  title: string;
-  slug: string;
-  description: string;
-  tags: string[];
-  cover: string;
-  content: string;
-  created: Date;
-  updated: Date;
-  published: boolean;
+	title: string;
+	slug: string;
+	description: string;
+	tags: string[];
+	cover: string;
+	content: string;
+	created: Date;
+	updated: Date;
+	published: boolean;
 }
 
 export type ProjectThumbnail = Omit<Project, "content">;
 
 export async function loadProject(slug: string): Promise<Project> {
-  try {
-    const file = await readFile(`data/projects/${slug}/${slug}.md`);
+	try {
+		const file = await readFile(`data/projects/${slug}/${slug}.md`);
 
-    const { body, attributes } = fm<ProjectAttributes>(
-      await file.toString("utf-8")
-    );
+		const { body, attributes } = fm<ProjectAttributes>(
+			await file.toString("utf-8"),
+		);
 
-    const title = attributes.title as string;
-    const description = attributes.description as string;
-    const tags = attributes.tags as string[];
-    const cover = attributes.cover as string;
-    const created = new Date(attributes.created as string);
-    const updated = new Date(attributes.updated as string);
-    const published = attributes.published as boolean;
+		const title = attributes.title as string;
+		const description = attributes.description as string;
+		const tags = attributes.tags as string[];
+		const cover = attributes.cover as string;
+		const created = new Date(attributes.created as string);
+		const updated = new Date(attributes.updated as string);
+		const published = attributes.published as boolean;
 
-    return {
-      title,
-      slug,
-      description,
-      tags,
-      cover,
-      content: body,
-      created,
-      updated,
-      published,
-    };
-  } catch (error) {
-    console.error(error);
-    throw new Error(`Could not load project "${slug}"`);
-  }
+		return {
+			title,
+			slug,
+			description,
+			tags,
+			cover,
+			content: body,
+			created,
+			updated,
+			published,
+		};
+	} catch (error) {
+		console.error(error);
+		throw new Error(`Could not load project "${slug}"`);
+	}
 }
 
 export async function listProjects(): Promise<Omit<Project, "content">[]> {
-  try {
-    const folders = await readdir("data/projects");
-    const projects: Omit<Project, "content">[] = [];
+	try {
+		const folders = await readdir("data/projects");
+		const projects: Omit<Project, "content">[] = [];
 
-    for await (const folder of folders) {
-      const file = await readFile(`data/projects/${folder}/${folder}.md`);
+		for await (const folder of folders) {
+			const file = await readFile(`data/projects/${folder}/${folder}.md`);
 
-      const content = await file.toString("utf-8");
+			const content = await file.toString("utf-8");
 
-      const { attributes } = fm<ProjectAttributes>(content);
+			const { attributes } = fm<ProjectAttributes>(content);
 
-      const title = attributes.title;
-      const description = attributes.description;
-      const tags = attributes.tags;
-      const cover = attributes.cover;
-      const created = new Date(attributes.created);
-      const updated = new Date(attributes.updated);
-      const published = attributes.published;
+			const title = attributes.title;
+			const description = attributes.description;
+			const tags = attributes.tags;
+			const cover = attributes.cover;
+			const created = new Date(attributes.created);
+			const updated = new Date(attributes.updated);
+			const published = attributes.published;
 
-      if (!published) {
-        continue;
-      }
+			if (!published) {
+				continue;
+			}
 
-      projects.push({
-        title,
-        slug: folder,
-        description,
-        tags,
-        cover,
-        created,
-        updated,
-        published,
-      });
-    }
+			projects.push({
+				title,
+				slug: folder,
+				description,
+				tags,
+				cover,
+				created,
+				updated,
+				published,
+			});
+		}
 
-    return projects.sort((a, b) => b.created.getTime() - a.created.getTime());
-  } catch (error) {
-    console.error(error);
-    throw new Error("Could not load projects");
-  }
+		return projects.sort((a, b) => b.created.getTime() - a.created.getTime());
+	} catch (error) {
+		console.error(error);
+		throw new Error("Could not load projects");
+	}
 }
 
 export async function loadProjectImage(
-  slug: string,
-  image: string
+	slug: string,
+	image: string,
 ): Promise<ArrayBuffer> {
-  try {
-    const imageData = await readFile(`data/projects/${slug}/${image}`);
+	try {
+		const imageData = await readFile(`data/projects/${slug}/${image}`);
 
-    return imageData.buffer.slice(
-      imageData.byteOffset,
-      imageData.byteOffset + imageData.byteLength
-    ) as ArrayBuffer;
-  } catch (error) {
-    console.error(error);
-    throw new Error(`Could not load image "${slug}"`);
-  }
+		return imageData.buffer.slice(
+			imageData.byteOffset,
+			imageData.byteOffset + imageData.byteLength,
+		) as ArrayBuffer;
+	} catch (error) {
+		console.error(error);
+		throw new Error(`Could not load image "${slug}"`);
+	}
 }

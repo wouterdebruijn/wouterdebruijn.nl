@@ -1,41 +1,37 @@
-import type { Metadata } from "next";
-import { Teko, Roboto } from "next/font/google";
 import "./globals.css";
-import AuthSessionProvider from "@/contexts/AuthSessionProvider";
-import { auth } from "@/auth";
+import { Teko, Roboto } from "next/font/google";
+import type { Metadata } from "next";
 import PlausibleProvider from "next-plausible/dist/lib/PlausibleProvider";
 
 const teko = Teko({
-  variable: "--font-teko",
-  subsets: ["latin-ext"],
+	variable: "--font-teko",
+	subsets: ["latin-ext"],
 });
 const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin-ext"],
+	variable: "--font-roboto",
+	subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
-  title: "Wouter de Bruijn",
-  description: "Personal website of Wouter de Bruijn",
-  authors: [{ name: "Wouter de Bruijn" }],
-  keywords: ["Wouter de Bruijn", "Personal website", "Wouter", "de Bruijn"],
-  robots: "index, follow",
+	title: "Wouter de Bruijn",
+	description: "Personal website of Wouter de Bruijn",
+	authors: [{ name: "Wouter de Bruijn" }],
+	keywords: ["Wouter de Bruijn", "Personal website", "Wouter", "de Bruijn"],
+	robots: "index, follow",
 };
 
 export default async function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  const session = await auth();
-
-  return (
-    <html lang="en">
-      <PlausibleProvider>
-        <body className={`${teko.variable} ${roboto.variable} antialiased`}>
-          <AuthSessionProvider session={session}>{children}</AuthSessionProvider>
-        </body>
-      </PlausibleProvider>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<PlausibleProvider>
+				<body className={`${teko.variable} ${roboto.variable} antialiased`}>
+					{children}
+				</body>
+			</PlausibleProvider>
+		</html>
+	);
 }

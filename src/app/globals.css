@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #1ae0bd;
-  --color-secondary: #faca3f;
-  --color-tertiary: #32699f;
-  --color-background: #222222;
-  --font-teko: var(--font-teko);
-  --font-roboto: var(--font-roboto);
+	--color-primary: #1ae0bd;
+	--color-secondary: #faca3f;
+	--color-tertiary: #32699f;
+	--color-background: #222222;
+	--font-teko: var(--font-teko);
+	--font-roboto: var(--font-roboto);
 }
 
 body {
-  font-family: var(--font-roboto);
+	font-family: var(--font-roboto);
 }
 
 h1,
@@ -19,5 +19,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-teko);
+	font-family: var(--font-teko);
 }
