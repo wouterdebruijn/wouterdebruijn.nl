@@ -134,7 +134,6 @@ connection. I was quite excited and sent Ianthe a video of its first little
 steps.
 
 <Video src="roombie-driving-1-web" />
-Feb 28, 2025
 
 ## Writing the software
 
