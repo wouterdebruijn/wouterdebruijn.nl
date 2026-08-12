@@ -11,11 +11,11 @@
 	},
 	"dependencies": {
 		"front-matter": "^4.0.2",
-		"next": "^16.2.11",
+		"next": "^16.3.0",
 		"next-auth": "^4.24.15",
 		"next-mdx-remote": "^6.0.0",
 		"next-plausible": "^4.0.0",
-		"pocketbase": "^0.27.0",
+		"pocketbase": "^0.27.1",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
 		"react-scroll-parallax": "^3.5.0"
@@ -29,13 +29,13 @@
 		"@types/react-dom": "19.2.3",
 		"autoprefixer": "^10.5.4",
 		"eslint": "^9.39.5",
-		"eslint-config-next": "^16.2.11",
+		"eslint-config-next": "^16.3.0",
 		"eslint-config-prettier": "^10.1.8",
 		"glob": "^13.0.6",
-		"postcss": "^8.5.22",
+		"postcss": "^8.5.26",
 		"prettier": "3.6.2",
 		"tailwindcss": "^4.3.3",
-		"tsx": "^4.23.1",
+		"tsx": "^4.23.12",
 		"typescript": "^5.9.3"
 	},
 	"overrides": {
