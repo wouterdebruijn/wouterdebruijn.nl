@@ -8,7 +8,13 @@ export default function ProjectImage({ src }: ProjectImageProps) {
 	return (
 		<figure className="block m-0 my-4 w-full sm:w-72 md:w-80 lg:w-96">
 			<div className="relative aspect-4/3 border border-white/10 rounded-sm overflow-hidden shadow-md">
-				<Image alt="" fill src={src} className="object-cover" />
+				<Image
+					alt=""
+					fill
+					src={src}
+					sizes="(max-width: 640px) 100vw, (max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
+					className="object-cover"
+				/>
 				{/* Sloped accent — bottom-right, primary */}
 				<div className="absolute bottom-0 right-0 w-8 h-8">
 					<svg
