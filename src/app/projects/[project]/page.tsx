@@ -29,12 +29,34 @@ export async function generateMetadata({
 		options: { parseFrontmatter: true },
 	});
 
+	const url = `/projects/${project}`;
+	const cover = `/projects/${project}/${frontmatter.cover}`;
+
 	return {
 		title: frontmatter.title,
 		description: frontmatter.description,
 		authors: [{ name: "Wouter de Bruijn" }],
 		keywords: frontmatter.tags,
 		robots: "index, follow",
+		openGraph: {
+			type: "article",
+			siteName: "Wouter de Bruijn",
+			title: frontmatter.title,
+			description: frontmatter.description,
+			url,
+			images: [
+				{
+					url: cover,
+					alt: frontmatter.title,
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: frontmatter.title,
+			description: frontmatter.description,
+			images: [cover],
+		},
 	};
 }
 
